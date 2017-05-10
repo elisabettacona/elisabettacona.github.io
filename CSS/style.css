@@ -1,0 +1,614 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  
+  font: 100%;
+  font-family: 'Helvetica', sans-serif;
+  
+  background-color:#333333;
+  
+}
+
+
+
+nav {
+  width: 100vw;
+  
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  
+  background-color: #333333;
+  
+  display: flex;
+  justify-content:space-between;
+}
+
+.monogram {
+  margin-left: auto;
+}
+
+ul {
+  margin:0;
+  padding:0;
+  
+  align-self:center;
+}
+
+li {
+  display: inline;
+  padding:0 1rem;
+  
+}
+
+a {
+  color: #ececec;
+  text-decoration: none;
+}
+
+
+.nav {
+  font-size: 1.3rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.strikeout {
+  line-height: 1rem;
+  position: relative;
+}
+.strikeout:hover::after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.wd-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.gd-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.ph-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.pt-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.cv-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.about-strikeout:after {
+  opacity: 1;
+  border-bottom: 0.23rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.28rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+
+
+/*MENU*/
+
+.hamburger {
+  display: none;
+}
+/*
+.hamburger {
+  position:absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  transition: all 0;
+}
+
+.bar {
+    background: #ececec;
+}
+
+
+.bar1 {
+  position: absolute;
+  right:25%;
+  top: 30%;
+  width: 30px;
+  height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar1 {
+  transform: rotate(-45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+.bar2 {
+  position: absolute;
+  right:25%;
+  top: 40%;
+  width: 40px;
+  height: 3px;
+  
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar2 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+} 
+
+.bar3 {
+  position: absolute;
+  right:25%;
+  top: 50%;
+  width: 25px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar3 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+}
+
+.bar4 {
+  position: absolute;
+  right:25%;
+  top: 60%;
+  width: 30px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar4 {
+  transform: rotate(45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+*/
+
+/*BACKGROUND*/
+
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.area:hover p {
+  opacity: 1;
+}
+
+.background {
+  margin: 0;
+  width: 50vw;
+  height: 50vh;
+  
+  position: relative;
+  top: 0;
+  
+  background-color:#333333;
+  float:left;
+  
+}
+
+.area-web-design:hover {
+  background-color:#4386db;
+}
+
+.area-graphic-design {
+  background-color:#333333;
+  float: right;
+  
+   border-left: 0.1vw solid white;
+   border-bottom: 0.1vw solid white
+}
+
+
+.area-graphic-design:hover {
+  background-color:#144113;
+}
+
+
+
+.area-photography {
+  background-color:#333333;
+  float: left;
+  
+   border-right: 0.1vw solid white;
+   border-top: 0.1vw solid white;
+}
+
+
+
+.area-photography:hover {
+  background-color:#5a1515;
+}
+
+
+.area-painting {
+  background-color:#333333;
+  float:right;
+}
+
+.area-painting:hover {
+  background-color:#c9a423;
+}
+
+
+
+.headline {
+  opacity: 0;
+  text-align: center;
+  font-size: 3rem;
+  
+  font-weight: 600;
+  
+  margin-top: 22.5vh;
+}
+
+.headline:hover {
+  opacity: 1;
+}
+
+
+
+.presentation {
+  
+  width: 30vw;
+  height: 8.5vh;
+  
+  position: absolute;
+  z-index: 1;
+  
+  margin-top: 45vh;
+  margin-left: 35vw;
+  
+  text-align: center;
+  
+  background-color: #ececec;
+  
+  padding: 10px;
+}
+
+#name {
+  padding: 0.5rem 0 0 0;
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+#profession {
+  padding:0;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+/*WEB DESIGN*/
+
+.arrow_left {
+  position:absolute;
+  top:44.7vh;
+  left: 5vw;
+  width: 100px;
+  height: 100px;
+}
+
+.arrow_right {
+  position:absolute;
+  top:43.7vh;
+  right: 1vw;
+  
+  width: 100px;
+  height: 100px;
+  
+}
+
+.arrow1 {
+  transform:rotate(-45deg);
+  background:#ffffff;
+  border-radius:100px;
+  
+  width: 80px;
+  height: 15px;
+  
+  position: absolute;
+  right:30%;
+  top: 20%;
+}
+
+.arrow2 {
+  transform:rotate(45deg);
+  background:#ffffff;
+  border-radius:100px;
+  
+  width: 80px;
+  height: 15px;
+  
+  position: absolute;
+  right:30%;
+  top: 70%;
+}
+
+
+.arrow3 {
+  transform:rotate(45deg);
+  background:#ffffff;
+  border-radius:100px;
+  
+  width: 80px;
+  height: 15px;
+  
+  position: absolute;
+  right:30%;
+  top: 30%;
+}
+
+.arrow4 {
+  transform:rotate(-45deg);
+  background:#ffffff;
+  border-radius:100px;
+  
+  width: 80px;
+  height: 15px;
+  
+  position: absolute;
+  right:30%;
+  top: 80%;
+}
+
+
+.web-design-bg {
+  background-color:#4386db;
+}
+
+/*PROJECTS*/
+
+
+.content {
+  background-color: #d8d8d8;
+  margin: 0 auto;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-top: 20vh;
+  position: absolute;
+  
+  display: flex;
+  flex-direction: column;
+  
+  margin-bottom: 10vh;
+}
+
+.project-title {
+  font-size: 5.2rem;
+  font-weight: 600;
+  line-height: 4rem;
+  
+  position: absolute;
+    left: 7vw;
+    top:3vh;
+    z-index: 1;
+}
+
+.img-and-description {
+  display: flex;
+  justify-content: space-around;
+}
+
+.mock-up {
+  padding: 4rem;
+}
+
+.description-atm {
+  font-size: 1.2rem;
+  
+  border-left: 1rem solid #ececec;
+  width: 40%;
+  padding-left: 2rem;
+  margin-top: 15%;
+  
+  }
+
+.screens {
+  width: 100%;
+  text-align: center;
+  border-top: 1rem solid #ececec; 
+}
+
+
+
+
+/*GRAPHIC DESIGN*/
+
+
+.graphic-design-bg {
+  float: right;
+  background-color:#144113;
+  
+  border-right: 0 solid white;
+  border-left: 0.1vw solid white;
+}
+
+.project-title-right {
+  left: 14vw;
+}
+
+
+.content-full-section {
+  background-color: #d8d8d8;
+  margin: 0 auto;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-top: 20vh;
+  position: absolute;
+  
+  display: flex;
+  flex-direction: column;
+  
+  margin-bottom: 10vh;
+}
+
+.mock-up-full-section {
+  width: 100%;
+}
+
+.description-full-section {
+  font-size: 1.2rem;
+  
+  border-left: 1rem solid #ececec;
+  width: 40%;
+  padding-left: 2rem;
+  margin-top: 20%;
+  
+  position: absolute;
+  left: 38vw;
+  z-index: 1;
+  
+  margin-bottom: 30vh;
+}
+
+.screen-full-section {
+  width: 100%;
+  clear: both;
+}
+
+/*PHOTOGRAPHY*/
+
+.photography-bg {
+  background-color:#5a1515;
+  
+  border-top: 0.1vw solid white;
+  
+  margin-top: 50vh;
+}
+
+/*PAINTING*/
+
+.painting-bg {
+  float: right;
+  background-color:#c9a423;
+  
+  border-top: 0.1vw solid white;
+  border-right: 0;
+  margin-top: 50vh;
+}
+
+.content-only {
+  background-color: #d8d8d8;
+  margin: 0 auto;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-top: 20vh;
+  position: absolute;
+  
+  display: flex;
+  flex-direction: column;
+  
+  margin-bottom: 10vh;
+}
+
+.description-only {
+  padding: 4rem 10rem;
+  
+  font-family: 'Droid Sans', sans-serif;
+  
+}
+
+/*
+@media (max-width:768px) {
+  
+  section {
+    
+    width: 100vw;
+    height: 25vh;
+  }
+  
+  .area-2 {
+    border-top: 0.1vw solid white;
+    border-left: 0vw;
+  }
+  
+  .area-3 {
+    
+    border-bottom: 0.1vw solid white;
+  }
+  
+  .area-4 {
+    
+    border-left: 0vw;
+  }
+  
+  
+}
+
+*/
+  
