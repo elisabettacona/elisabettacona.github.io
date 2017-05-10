@@ -144,95 +144,7 @@ a {
 .hamburger {
   display: none;
 }
-/*
-.hamburger {
-  position:absolute;
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 60px;
-  transition: all 0;
-}
 
-.bar {
-    background: #ececec;
-}
-
-
-.bar1 {
-  position: absolute;
-  right:25%;
-  top: 30%;
-  width: 30px;
-  height: 3px;
-  background: #ececec;
-  
-  transition: rotate 0.1s ease-in;
-  transform: rotate(0);
-}
-
-a:hover .bar1 {
-  transform: rotate(-45deg);
-  top:50%;
-  
-  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
-}
-
-.bar2 {
-  position: absolute;
-  right:25%;
-  top: 40%;
-  width: 40px;
-  height: 3px;
-  
-  
-  transition: opacity 0s;
-  opacity: 1;
-}
-
-a:hover .bar2 {
-  opacity: 0;
-  
-  transition: opacity 0.1s ease-in;
-} 
-
-.bar3 {
-  position: absolute;
-  right:25%;
-  top: 50%;
-  width: 25px;
-    height: 3px;
-  background: #ececec;
-  
-  transition: opacity 0s;
-  opacity: 1;
-}
-
-a:hover .bar3 {
-  opacity: 0;
-  
-  transition: opacity 0.1s ease-in;
-}
-
-.bar4 {
-  position: absolute;
-  right:25%;
-  top: 60%;
-  width: 30px;
-    height: 3px;
-  background: #ececec;
-  
-  transition: rotate 0.1s ease-in;
-  transform: rotate(0);
-}
-
-a:hover .bar4 {
-  transform: rotate(45deg);
-  top:50%;
-  
-  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
-}
-*/
 
 /*BACKGROUND*/
 
@@ -583,32 +495,215 @@ a:hover .bar4 {
   
 }
 
-/*
-@media (max-width:768px) {
+
+@media (max-width:1152px) {
   
-  section {
-    
-    width: 100vw;
-    height: 25vh;
+  /*HOMEPAGE*/
+ 
+  nav {
+    background-color: transparent;
   }
   
-  .area-2 {
-    border-top: 0.1vw solid white;
-    border-left: 0vw;
-  }
+ .nav {
+  font-size: 1.1rem;
+} 
   
-  .area-3 {
-    
-    border-bottom: 0.1vw solid white;
+  li {
+    padding: 0 0.5rem;
   }
-  
-  .area-4 {
-    
-    border-left: 0vw;
-  }
-  
+
+#name {
+  font-size: 1.4rem;
+}
+
+#profession {
+  font-size: 0.8rem;
+}
   
 }
 
-*/
+
+
+
+
+
+@media (max-width:800px) {
+  
+  /*HOMEPAGE*/
+  
+ .nav {
+  display: none;
+} 
+
+  .hamburger {
+    display: block;
+  }
+
+.hamburger {
+  position:absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  transition: all 0;
+}
+
+.bar {
+    background: #ececec;
+}
+
+
+.bar1 {
+  position: absolute;
+  right:25%;
+  top: 30%;
+  width: 30px;
+  height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar1 {
+  transform: rotate(-45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+.bar2 {
+  position: absolute;
+  right:25%;
+  top: 40%;
+  width: 40px;
+  height: 3px;
+  
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar2 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+} 
+
+.bar3 {
+  position: absolute;
+  right:25%;
+  top: 50%;
+  width: 25px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar3 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+}
+
+.bar4 {
+  position: absolute;
+  right:25%;
+  top: 60%;
+  width: 30px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar4 {
+  transform: rotate(45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+  
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.area:hover p {
+  opacity: 1;
+}
+
+.background {
+  width: 100vw;
+  height: 25vh;
+  
+  border-bottom: 0.1vw solid white;
+}
+  
+.area-graphic-design {
+   border-left: 0;
+}
+
+
+.area-photography {
+   border-right: 0 ;
+   border-top: 0 ;
+}
+
+.headline {
+  font-size: 2rem;
+  margin-top: 10vh;
+} 
+ 
+.presentation {
+  
+  width: 50vw;
+  height: 8.5vh;
+  
+  position: absolute;
+  z-index: 1;
+  
+  margin-top: 45.7vh;
+  margin-left: 25vw;
+  
+  text-align: center;
+  
+  background-color: #ececec;
+  
+  padding: 10px;
+}
+ 
+}
+
+
+@media (max-width:480px) {
+  
+/*HOMEPAGE*/  
+.presentation {
+  
+  width: 70vw;
+  height: 7vh;
+  
+  margin-top: 46.5vh;
+  margin-left: 15vw;
+  
+  padding: 8px;
+}
+  
+  #name{
+    font-size: 1.1rem;
+  }
+  
+  #profession {
+    font-weight: 400;
+  }
+  
+  
+  
+}
   
