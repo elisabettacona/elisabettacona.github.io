@@ -21,13 +21,12 @@ nav {
   padding: 0.5rem 1rem;
   position: absolute;
   
-  background-color: #333333;
-  
   display: flex;
   justify-content:space-between;
 }
 
 .monogram {
+  width: 50%;
   margin-left: auto;
 }
 
@@ -51,7 +50,7 @@ a {
 
 
 .nav {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 200;
   text-transform: uppercase;
 }
@@ -62,10 +61,10 @@ a {
 }
 .strikeout:hover::after {
   opacity: 1;
-  border-bottom: 0.23rem solid #ececec;
+  border-bottom: 0.18rem solid #ececec;
   content: "";
   left: 0;
-  margin-top: calc(0.28rem / 2 * -1);
+  margin-top: calc(0.18rem / 2 * -1);
   position: absolute;
   right: 0;
   top: 50%;
@@ -84,10 +83,10 @@ a {
 
 .gd-strikeout:after {
   opacity: 1;
-  border-bottom: 0.23rem solid #ececec;
+  border-bottom: 0.18rem solid #ececec;
   content: "";
   left: 0;
-  margin-top: calc(0.28rem / 2 * -1);
+  margin-top: calc(0.18rem / 2 * -1);
   position: absolute;
   right: 0;
   top: 50%;
@@ -95,10 +94,10 @@ a {
 
 .ph-strikeout:after {
   opacity: 1;
-  border-bottom: 0.23rem solid #ececec;
+  border-bottom: 0.18rem solid #ececec;
   content: "";
   left: 0;
-  margin-top: calc(0.28rem / 2 * -1);
+  margin-top: calc(0.18rem / 2 * -1);
   position: absolute;
   right: 0;
   top: 50%;
@@ -117,10 +116,10 @@ a {
 
 .cv-strikeout:after {
   opacity: 1;
-  border-bottom: 0.23rem solid #ececec;
+  border-bottom: 0.18rem solid #ececec;
   content: "";
   left: 0;
-  margin-top: calc(0.28rem / 2 * -1);
+  margin-top: calc(0.18rem / 2 * -1);
   position: absolute;
   right: 0;
   top: 50%;
@@ -128,10 +127,10 @@ a {
 
 .about-strikeout:after {
   opacity: 1;
-  border-bottom: 0.23rem solid #ececec;
+  border-bottom: 0.18rem solid #ececec;
   content: "";
   left: 0;
-  margin-top: calc(0.28rem / 2 * -1);
+  margin-top: calc(0.18rem / 2 * -1);
   position: absolute;
   right: 0;
   top: 50%;
@@ -235,7 +234,7 @@ a {
 .presentation {
   
   width: 30vw;
-  height: 8.5vh;
+  height: 10vh;
   
   position: absolute;
   z-index: 1;
@@ -267,6 +266,7 @@ a {
 
 /*WEB DESIGN*/
 
+/*arrows*/
 .arrow_left {
   position:absolute;
   top:44.7vh;
@@ -496,6 +496,13 @@ a {
 }
 
 
+
+
+
+
+
+
+
 @media (max-width:1152px) {
   
   /*HOMEPAGE*/
@@ -505,7 +512,7 @@ a {
   }
   
  .nav {
-  font-size: 1.1rem;
+  font-size: 1rem;
 } 
   
   li {
@@ -519,6 +526,84 @@ a {
 #profession {
   font-size: 0.8rem;
 }
+  
+
+  
+  /*arrows*/
+.arrow_left {
+  left: 2vw;
+}
+
+.arrow1 {
+  width: 60px;
+  height: 10px;
+  
+  top: 40%;
+  left: 0;
+}
+
+.arrow2 {
+  width: 60px;
+  height: 10px;
+  
+  top: 75%;
+  left: 0;
+}
+
+
+.arrow3 {
+  width: 60px;
+  height: 10px;
+
+  top: 40%;
+  right: 0;
+}
+
+.arrow4 {
+  width: 60px;
+  height: 10px;
+  
+  top: 75%;
+  right: 0;
+}
+  
+  
+/*GRAPHIC DESIGN */
+  
+  .description-full-section {
+  font-size: 1.1rem;
+  
+  border-left: 0;
+  width: 100%;
+  padding-left: 0;
+  margin-top: 0;
+  
+  position: relative;
+  left: 0;
+  z-index: 1;
+  
+  margin-bottom: 0;
+    
+    padding: 2rem 10rem;
+}
+  
+  .project-title {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 3.3rem;
+  
+  position: absolute;
+    left: 15vw;
+    top:6vh;
+    z-index: 1;
+}
+  
+  
+  
+  
+  
+  
+  
   
 }
 
@@ -627,6 +712,7 @@ a:hover .bar4 {
   transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
 }
 
+ /*HOMEPAGE*/
   
 .homepage {
   width: 100vw;
@@ -663,7 +749,7 @@ a:hover .bar4 {
 .presentation {
   
   width: 50vw;
-  height: 8.5vh;
+  height: 9.5vh;
   
   position: absolute;
   z-index: 1;
@@ -678,6 +764,61 @@ a:hover .bar4 {
   padding: 10px;
 }
  
+  
+    /*arrows*/
+.arrow_left {
+  left: 1vw;
+}
+
+.arrow1 {
+  width: 30px;
+  height: 5px;
+  
+  top: 56%;
+  left: 0;
+}
+
+.arrow2 {
+  width: 30px;
+  height: 5px;
+  
+  top: 75%;
+  left: 0;
+}
+
+
+.arrow3 {
+  width: 30px;
+  height: 5px;
+
+  top: 56%;
+  right: 0;
+}
+
+.arrow4 {
+  width: 30px;
+  height: 5px;
+  
+  top: 75%;
+  right: 0;
+}
+  
+  
+  /*CONTENT*/
+  
+  .content-full-section {
+  margin-left: 13vw;
+}
+  
+  
+ /*GRAPHIC DESIGN */
+  
+  .description-full-section {
+  font-size: 1rem;
+  padding: 1rem 5rem;
+}  
+  
+ 
 }
 
 
@@ -687,7 +828,7 @@ a:hover .bar4 {
 .presentation {
   
   width: 70vw;
-  height: 7vh;
+  height: 9vh;
   
   margin-top: 46.5vh;
   margin-left: 15vw;
@@ -703,7 +844,43 @@ a:hover .bar4 {
     font-weight: 400;
   }
   
+   /*GRAPHIC DESIGN */
   
+  .project-title {
+    font-size: 3.25rem;
+    line-height: 2.6rem;
+    padding-left: 3vw;
+    top: 34%;
+  }
+  
+  .description-full-section {
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+}
   
 }
   
+
+
+
+
+
+
+
+@media (max-width:320px) {
+  
+ /*GRAPHIC DESIGN */
+  
+  .project-title {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    padding-left: 5vw;
+    top: 45%;
+  }
+  
+  .description-full-section {
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+} 
+  
+}
