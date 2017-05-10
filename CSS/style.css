@@ -813,6 +813,10 @@ a:hover .bar4 {
   
  /*GRAPHIC DESIGN */
   
+  .graphic-design-bg {
+   border-left: 0; 
+  }
+  
   .description-full-section {
   font-size: 1rem;
   padding: 1rem 5rem;
@@ -869,13 +873,29 @@ a:hover .bar4 {
 
 @media (max-width:320px) {
   
+  /*ARROW*/
+  .arrow_left {
+  top: 20vh; 
+  }
+  
+  .arrow_right {
+  top: 20vh; 
+  }
+  
+  /*CONTENT*/
+  
+  .content-full-section {
+    
+  }
+  
+  
  /*GRAPHIC DESIGN */
   
   .project-title {
     font-size: 2.5rem;
-    line-height: 2rem;
-    padding-left: 5vw;
-    top: 45%;
+    line-height: 1.7rem;
+    padding-left: 2vw;
+    top: 30%;
   }
   
   .description-full-section {
