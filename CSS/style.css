@@ -30,7 +30,7 @@ NAVIGATION
   display: flex;
   flex-direction: column;
   
-  background-color:#242424;
+  background-color:#242424; /*#333*/
   
   padding: 1rem;
   
