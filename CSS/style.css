@@ -60,7 +60,7 @@ NAVIGATION
   padding-top: 3rem;
 }
 
-img {
+.monogram img {
   width: 60%;
 }
 
@@ -156,93 +156,628 @@ ul {
   background-color: rgba(45, 45, 45, 0.9);
 }
 
-/*
-h3 {
-  margin: 0;
-  padding: 21vh 0;
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1360px) {
+  
+  .monogram img {
+  width: 60%;
+}
+  
+  .name {
+    font-size: 0.8rem;
+  }
+  
 }
 
 
-.headline {
-  display: none;
+
+
+
+
+
+@media only screen and (max-width:1024px) {
+
+  .lang {
+    font-size: 0.7rem;
+  }
+  
+  
+  li {
+    font-size: 0.9rem;
+  }  
+  
+.portfolio-nav {
+  font-size: 0.65rem;
+}
+  
+  
+  .name {
+    font-size: 0.7rem;
+  }
+  
 }
 
-.headline:hover {
- display: block;
+
+
+@media only screen and (max-width:800px) {
+  
+  li {
+    font-size:0.7rem ;
+  }
+  
+  .portfolio-nav {
+    font-size:0.55rem ;
+  }
+  
+}
+
+
+
+
+
+@media only screen and (max-width:640px) {
+  
+ /*---------
+NAVIGATION 
+---------*/
+
+  
+.navigation-bar {
+  width: 100vw;
+  height: 8vh;
+  
+  flex-direction: row;
+  
+  background-color: transparent;
+}
+
+/*LANGUAGE*/
+.lang {
+  display: none; 
+}
+
+/*PRESENTATION*/
+
+.monogram {
   text-align: center;
-  font-size: 3rem;
-  
-  font-weight: 600;
-  
-  margin-top: 22.5vh;
-}
-*/
-
-/*
-.area-web-design {
- width: 50%;
-  height: 50%; 
-  background-image: url(../IMG/ATM-prototype.png);
+  padding-top: 0;
 }
 
-.background {
-  width: 50%;
-  height: 50%;
+.monogram img {
+  width: 40%;
   
-  background-color: rgba(42, 42, 42, 0.8);
-  float:left; 
 }
 
-.backgorund {
-  background-color:#333333;
-}*/
+.name {
+  font-size: 0.5rem;
+}
 
-/*BACKGROUND*/
+/*INTERNAL LINKING*/
 
-/*.area:hover p {
+nav {
+  display: none;
+ padding-top: 5rem; 
+} 
+
+  
+.hamburger {
+    display: block;
+  }
+
+.hamburger {
+  position:absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  transition: all 0;
+}
+
+.bar {
+    background: #ececec;
+}
+
+
+.bar1 {
+  position: absolute;
+  right:25%;
+  top: 30%;
+  width: 30px;
+  height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar1 {
+  transform: rotate(-45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+.bar2 {
+  position: absolute;
+  right:25%;
+  top: 40%;
+  width: 40px;
+  height: 3px;
+  
+  
+  transition: opacity 0s;
   opacity: 1;
 }
 
-.area-web-design:hover {
-  background-color:#4386db;
-}
-
-.area-graphic-design {
-  background-color:#333333;
-  float: right;
+a:hover .bar2 {
+  opacity: 0;
   
-   border-left: 0.1vw solid white;
-   border-bottom: 0.1vw solid white
+  transition: opacity 0.1s ease-in;
+} 
+
+.bar3 {
+  position: absolute;
+  right:25%;
+  top: 50%;
+  width: 25px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar3 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+}
+
+.bar4 {
+  position: absolute;
+  right:25%;
+  top: 60%;
+  width: 30px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar4 {
+  transform: rotate(45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}  
+  
+  
+  
+/*---------
+  HOMEPAGE
+  ---------*/
+
+.homepage {
+  margin-left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.area {
+  width: 100%;
+  height: 25%;
+}   
+  
 }
 
 
-.area-graphic-design:hover {
-  background-color:#144113;
+
+
+
+  /*
+ 
+1152 
+
+  
+ 
+.arrow_left {
+  left: 2vw;
 }
 
+.arrow1 {
+  width: 60px;
+  height: 10px;
+  
+  top: 40%;
+  left: 0;
+}
+
+.arrow2 {
+  width: 60px;
+  height: 10px;
+  
+  top: 75%;
+  left: 0;
+}
+
+
+.arrow3 {
+  width: 60px;
+  height: 10px;
+
+  top: 40%;
+  right: 0;
+}
+
+.arrow4 {
+  width: 60px;
+  height: 10px;
+  
+  top: 75%;
+  right: 0;
+}
+  
+  
+GRAPHIC DESIGN 
+  
+  .description-full-section {
+  font-size: 1.1rem;
+  
+  border-left: 0;
+  width: 100%;
+  padding-left: 0;
+  margin-top: 0;
+  
+  position: relative;
+  left: 0;
+  z-index: 1;
+  
+  margin-bottom: 0;
+    
+    padding: 2rem 10rem;
+}
+  
+  .project-title {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 3.3rem;
+  
+  position: absolute;
+    left: 15vw;
+    top:6vh;
+    z-index: 1;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+}
+
+
+
+
+
+
+@media (max-width:800px) {
+  
+  HOMEPAGE
+  
+ .nav {
+  display: none;
+} 
+
+  .hamburger {
+    display: block;
+  }
+
+.hamburger {
+  position:absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  transition: all 0;
+}
+
+.bar {
+    background: #ececec;
+}
+
+
+.bar1 {
+  position: absolute;
+  right:25%;
+  top: 30%;
+  width: 30px;
+  height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar1 {
+  transform: rotate(-45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+.bar2 {
+  position: absolute;
+  right:25%;
+  top: 40%;
+  width: 40px;
+  height: 3px;
+  
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar2 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+} 
+
+.bar3 {
+  position: absolute;
+  right:25%;
+  top: 50%;
+  width: 25px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: opacity 0s;
+  opacity: 1;
+}
+
+a:hover .bar3 {
+  opacity: 0;
+  
+  transition: opacity 0.1s ease-in;
+}
+
+.bar4 {
+  position: absolute;
+  right:25%;
+  top: 60%;
+  width: 30px;
+    height: 3px;
+  background: #ececec;
+  
+  transition: rotate 0.1s ease-in;
+  transform: rotate(0);
+}
+
+a:hover .bar4 {
+  transform: rotate(45deg);
+  top:50%;
+  
+  transition: rotate 0.3s ease 0.3s, top 0.05s ease-in;
+}
+
+ HOMEPAGE
+  
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.area:hover p {
+  opacity: 1;
+}
+
+.background {
+  width: 100vw;
+  height: 25vh;
+  
+  border-bottom: 0.1vw solid white;
+}
+  
+.area-graphic-design {
+   border-left: 0;
+}
 
 
 .area-photography {
-  background-color:#333333;
-  float: left;
+   border-right: 0 ;
+   border-top: 0 ;
+}
+
+.headline {
+  font-size: 2rem;
+  margin-top: 10vh;
+} 
+ 
+.presentation {
   
-   border-right: 0.1vw solid white;
-   border-top: 0.1vw solid white;
+  width: 50vw;
+  height: 9.5vh;
+  
+  position: absolute;
+  z-index: 1;
+  
+  margin-top: 45.7vh;
+  margin-left: 25vw;
+  
+  text-align: center;
+  
+  background-color: #ececec;
+  
+  padding: 10px;
+}
+ 
+  
+    arrows
+.arrow_left {
+  left: 1vw;
+}
+
+.arrow1 {
+  width: 30px;
+  height: 5px;
+  
+  top: 56%;
+  left: 0;
+}
+
+.arrow2 {
+  width: 30px;
+  height: 5px;
+  
+  top: 75%;
+  left: 0;
 }
 
 
+.arrow3 {
+  width: 30px;
+  height: 5px;
 
-.area-photography:hover {
-  background-color:#5a1515;
+  top: 56%;
+  right: 0;
+}
+
+.arrow4 {
+  width: 30px;
+  height: 5px;
+  
+  top: 75%;
+  right: 0;
+}
+  
+  
+  CONTENt
+  
+  .content-full-section {
+  margin-left: 13vw;
+}
+  
+WEB DESIGN
+  
+  .img-and-description {
+    flex-direction: column;
+    justify-content: center;
+}
+  
+  .mock-up {
+  align-self: center;
+}
+  
+  .description {
+    margin-top: 0;
+   align-self: center; 
+  }
+  
+  .description-atm {
+    border:0;
+  }
+  
+GRAPHIC DESIGN 
+  
+  .graphic-design-bg {
+   border-left: 0; 
+  }
+  
+  .description-full-section {
+  font-size: 1rem;
+  padding: 1rem 5rem;
+}  
+  
+ 
 }
 
 
-.area-painting {
-  background-color:#333333;
-  float:right;
+@media (max-width:480px) {
+  
+HOMEPAGE 
+.presentation {
+  
+  width: 70vw;
+  height: 9vh;
+  
+  margin-top: 46.5vh;
+  margin-left: 15vw;
+  
+  padding: 8px;
 }
+  
+  #name{
+    font-size: 1.1rem;
+  }
+  
+  #profession {
+    font-weight: 400;
+  }
+  
+  GRAPHIC DESIGN 
+  
+  .project-title {
+    font-size: 3.25rem;
+    line-height: 2.6rem;
+    padding-left: 3vw;
+    top: 34%;
+  }
+  
+  .description-full-section {
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+}
+  
+}
+  
 
-.area-painting:hover {
-  background-color:#c9a423;
-}
+
+
+
+
+
+
+@media (max-width:320px) {
+  
+  ARROW
+  .arrow_left {
+  top: 20vh; 
+  }
+  
+  .arrow_right {
+  top: 20vh; 
+  }
+  
+ CONTENT
+  
+  .content-full-section {
+    
+  }
+  
+  
+ GRAPHIC DESIGN 
+  
+  .project-title {
+    font-size: 2.5rem;
+    line-height: 1.7rem;
+    padding-left: 2vw;
+    top: 30%;
+  }
+  
+  .description-full-section {
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+} 
+  
 }*/
