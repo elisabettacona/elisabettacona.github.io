@@ -15,7 +15,7 @@ body {
 
 
 nav {
-  width: 100vw;
+  width: 100%;
   
   margin: 0 auto;
   padding: 0.5rem 1rem;
@@ -23,6 +23,8 @@ nav {
   
   display: flex;
   justify-content:space-between;
+  
+  background-color: #333333;
 }
 
 .monogram {
@@ -380,14 +382,16 @@ a {
   padding: 4rem;
 }
 
+.description {
+   margin-top: 15%;
+}
+
 .description-atm {
   font-size: 1.2rem;
   
   border-left: 1rem solid #ececec;
-  width: 40%;
   padding-left: 2rem;
   margin-top: 15%;
-  
   }
 
 .screens {
@@ -408,9 +412,14 @@ a {
   
   border-right: 0 solid white;
   border-left: 0.1vw solid white;
+  border-bottom: 0.1vw solid white;
+  
+  display: flex;
+  justify-content: center;
 }
 
 .project-title-right {
+  
   left: 14vw;
 }
 
@@ -810,6 +819,25 @@ a:hover .bar4 {
   margin-left: 13vw;
 }
   
+ /*WEB DESIGN*/
+  
+  .img-and-description {
+    flex-direction: column;
+    justify-content: center;
+}
+  
+  .mock-up {
+  align-self: center;
+}
+  
+  .description {
+    margin-top: 0;
+   align-self: center; 
+  }
+  
+  .description-atm {
+    border:0;
+  }
   
  /*GRAPHIC DESIGN */
   
