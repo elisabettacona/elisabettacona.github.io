@@ -5,7 +5,7 @@
 body {
   margin: 0;
   
-  background-color: /*#f2f2f2*/ #d8d8d8;
+  background-color: #ececec;
   
   font-size: 100%;
   font-family: 'Helvetica', sans-serif;
@@ -113,7 +113,6 @@ ul {
   top: 50%;
 }
 
-
 /*HOMEPAGE*/
 
 .homepage {
@@ -138,15 +137,15 @@ ul {
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/abacedario-3.png);
+  background-image: url(../IMG/tuesdays-magazine.png);
 }
 
 .area-photography {
-  background-image: url(../IMG/espressione-libri-1.png);
+  background-image: url(../IMG/tuesdays-responsive.png);
 }
 
 .area-painting {
-  background-image: url(../IMG/t-shirt-2.png);
+  background-image: url(../IMG/D&G-prototype.png);
 }
 
 .background {
@@ -157,9 +156,163 @@ ul {
 }
 
 
+/*---------
+WEB DESIGN
+---------*/
+
+/*ATM PROJECT*/
+
+.content {
+  margin-left: auto;
+  width: 85vw;
+  
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 5vh;
+  margin-bottom:10vh;
+  
+  background-color: #ececec;
+}
+
+.project-title {
+  margin: 0.3rem 0 0 0;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.project-topic {
+  font-size: 1.3rem;
+}
+
+.intro {
+  padding-bottom: 5rem;
+}
+
+.line {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background-color: brown;
+}
+
+.invision {
+  color: brown;
+}
+
+.screens {
+  width: 100%;
+}
+
+.wd::after {
+  opacity: 1;
+  border-bottom: 0.18rem solid #ececec;
+  content: "";
+  left: 0;
+  margin-top: calc(0.18rem / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+
+/*-------
+  ARROWS
+-------*/
+
+.arrow_left {
+  position:fixed;
+  left: 15rem;
+  top: 45vh;
+  
+  height: 100px;
+}
+
+.arrow_right {
+  position:fixed;
+  right: 1.5rem;
+  top: 45vh;
+  
+  height: 100px;
+  
+}
+
+.arrow1 {
+  transform:rotate(-45deg);
+  background:#333;
+  border-radius:100px;
+  
+  width: 60px;
+  height: 12px;
+  
+  position: absolute;
+  top: 25%;
+}
+
+.arrow2 {
+  transform:rotate(45deg);
+  background:#333;
+  border-radius:100px;
+  
+  width: 60px;
+  height: 12px;
+  
+  position: absolute;
+  top: 60%;
+}
+
+
+.arrow3 {
+  transform:rotate(45deg);
+  background:#333;
+  border-radius:100px;
+  
+  width: 60px;
+  height: 12px;
+  
+  position: absolute;
+  right:30%;
+  top: 25%;
+}
+
+.arrow4 {
+  transform:rotate(-45deg);
+  background:#333;
+  border-radius:100px;
+  
+  width: 60px;
+  height: 12px;
+  
+  position: absolute;
+  right:30%;
+  top: 60%;
+}
 
 
 
+
+@media only screen and (max-width:1920px) {
+  
+  /*ARROWS*/
+  .arrow_left {
+  left: 20rem;
+}
+  
+}
+
+@media only screen and (max-width:1680px) {
+  
+  /*ARROWS*/
+  .arrow_left {
+  left: 17rem;
+}
+  
+}
 
 
 
@@ -174,10 +327,24 @@ ul {
     font-size: 0.8rem;
   }
   
+  /*ARROWS*/
+  .arrow_left {
+  left: 14rem;
+}
 }
 
 
+@media only screen and (max-width:1152px) {
+  /*-------
+  PROJECTS
+  --------*/
+  
+  /*ARROWS*/
+  .arrow_left {
+  left: 12rem;
+}
 
+}
 
 
 
@@ -202,6 +369,21 @@ ul {
     font-size: 0.7rem;
   }
   
+  
+  /*-------
+  PROJECTS
+  --------*/
+  
+  /*ARROWS*/
+  .arrow_left {
+  left: 10.5rem;
+}
+
+.arrow_right {
+  right: 1rem;
+}
+  
+  
 }
 
 
@@ -215,6 +397,16 @@ ul {
   .portfolio-nav {
     font-size:0.55rem ;
   }
+  
+  /*ARROWS*/
+  .arrow_left {
+  left: 7.3rem;
+}
+  
+  .arrow_right {
+    right: 0.3rem;
+  }
+  
   
 }
 
@@ -230,6 +422,8 @@ NAVIGATION
 
   
 .navigation-bar {
+  padding: 0;
+  padding-top: 1rem;
   width: 100vw;
   height: 8vh;
   
@@ -375,97 +569,25 @@ a:hover .bar4 {
   width: 100%;
   height: 25%;
 }   
-  
-}
-
-
-
-
-
-  /*
  
-1152 
-
   
- 
-.arrow_left {
-  left: 2vw;
-}
-
-.arrow1 {
-  width: 60px;
-  height: 10px;
-  
-  top: 40%;
+/*ARROWS*/
+  .arrow_left {
   left: 0;
 }
-
-.arrow2 {
-  width: 60px;
-  height: 10px;
   
-  top: 75%;
-  left: 0;
-}
-
-
-.arrow3 {
-  width: 60px;
-  height: 10px;
-
-  top: 40%;
-  right: 0;
-}
-
-.arrow4 {
-  width: 60px;
-  height: 10px;
-  
-  top: 75%;
-  right: 0;
-}
-  
-  
-GRAPHIC DESIGN 
-  
-  .description-full-section {
-  font-size: 1.1rem;
-  
-  border-left: 0;
-  width: 100%;
-  padding-left: 0;
-  margin-top: 0;
-  
-  position: relative;
-  left: 0;
-  z-index: 1;
-  
-  margin-bottom: 0;
-    
-    padding: 2rem 10rem;
-}
-  
-  .project-title {
-  font-size: 4rem;
-  font-weight: 600;
-  line-height: 3.3rem;
-  
-  position: absolute;
-    left: 15vw;
-    top:6vh;
-    z-index: 1;
-}
-  
-  
-  
-  
-  
-  
+  .arrow_right {
+    right: 0;
+  }  
   
   
 }
 
 
+
+
+
+/*
 
 
 
