@@ -54,6 +54,11 @@ NAVIGATION
   font-weight: 600;
 }
 
+.lang-it {
+  color: #909090;
+  font-weight: 600;
+}
+
 /*PRESENTATION*/
 
 .monogram {
@@ -91,6 +96,10 @@ ul {
   text-align: right;
   text-transform: uppercase;
   list-style-type: none;
+}
+
+.selected {
+  color: #909090;
 }
 
 .portfolio-nav {
@@ -683,6 +692,10 @@ a:hover .bar4 {
   width: 30px;
   height: 5px;
   background-color: brown;
+}
+  
+  .intro {
+  padding-bottom: 3rem;
 }
   
 }
