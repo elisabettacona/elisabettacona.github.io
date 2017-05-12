@@ -164,6 +164,63 @@ ul {
   background-color: rgba(45, 45, 45, 0.9);
 }
 
+/*--------------
+     ABOUT
+-------------*/
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.content-about {
+  padding-top: 15vh;
+}
+
+.hello {
+  color: #adadad;
+  
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 13rem;
+ 
+}
+
+
+.presentation {
+  font-weight: 900;
+  font-size: 2rem;
+  position: relative;
+  bottom: 5rem;
+  left: 4rem;
+}
+
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  
+  position: relative;
+  left: 4rem;
+}
+
+.contact {
+  color: #333;
+  
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact:hover {
+  color: #adadad;
+}
+
+.email {
+  /*transform: rotate(-90deg);*/
+}
+
+
 
 /*---------
 WEB DESIGN
@@ -269,7 +326,7 @@ WEB DESIGN
 
 .arrow_left {
   position:fixed;
-  left: 15rem;
+  left: 16vw;
   top: 45vh;
   
   height: 100px;
@@ -338,24 +395,6 @@ WEB DESIGN
 
 
 
-@media only screen and (max-width:1920px) {
-  
-  /*ARROWS*/
-  .arrow_left {
-  left: 20rem;
-}
-  
-}
-
-@media only screen and (max-width:1680px) {
-  
-  /*ARROWS*/
-  .arrow_left {
-  left: 17rem;
-}
-  
-}
-
 
 
 
@@ -369,23 +408,6 @@ WEB DESIGN
     font-size: 0.8rem;
   }
   
-  /*ARROWS*/
-  .arrow_left {
-  left: 14rem;
-}
-}
-
-
-@media only screen and (max-width:1152px) {
-  /*-------
-  PROJECTS
-  --------*/
-  
-  /*ARROWS*/
-  .arrow_left {
-  left: 12rem;
-}
-
 }
 
 
@@ -411,31 +433,6 @@ WEB DESIGN
     font-size: 0.7rem;
   }
   
-  
-  /*-------
-  PROJECTS
-  --------*/
-  
-  /*ARROWS*/
-  .arrow_left {
-  left: 10.5rem;
-}
-
-.arrow_right {
-  right: 1rem;
-}
-  
-  
-}
-
-
-@media only screen and (max-width:900px) {
-  
-  /*ARROWS*/
-  .arrow_left {
-  left: 8.5rem;
-} 
-  
 }
 
 
@@ -450,9 +447,6 @@ WEB DESIGN
   }
   
   /*ARROWS*/
-  .arrow_left {
-  left: 7.3rem;
-}
   
   .arrow_right {
     right: 0.3rem;
