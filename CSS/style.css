@@ -201,9 +201,12 @@ p {
 .contact-section {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   
   position: relative;
   left: 4rem;
+  
+  line-height: 2rem;
 }
 
 .contact {
@@ -435,7 +438,26 @@ WEB DESIGN
     font-size: 0.7rem;
   }
   
+  
+  
+  /*--------------
+     ABOUT
+-------------*/
+
+.hello {
+  font-size: 10rem;
+ 
 }
+
+
+.presentation {
+  font-size: 1.5rem;
+  bottom: 3.8rem;
+}
+  
+  
+}
+
 
 
 @media only screen and (max-width:800px) {
@@ -454,6 +476,33 @@ WEB DESIGN
     right: 0.3rem;
   }
   
+  
+    /*--------------
+     ABOUT
+-------------*/
+
+
+  
+.hello {
+  font-size: 8rem;
+ 
+}
+
+
+.presentation {
+  font-size: 1rem;
+  
+  bottom: 2.7rem;
+  left: 2.5rem;
+}
+ 
+  .contact-section {
+    left: 2.5rem;
+  }
+  
+  .contact {
+    font-size: 0.8rem;
+  }
   
 }
 
@@ -740,6 +789,34 @@ a:hover .bar4 {
   top: 38%;
 }
  
+ 
+    /*--------------
+     ABOUT
+-------------*/
+
+
+  
+.hello {
+  font-size: 5rem;
+}
+
+
+.presentation {
+  padding-right: 1.8rem;
+  
+  font-size: 1rem;
+  
+  bottom: 2rem;
+}
+ 
+  .contact-section {
+    padding-right: 1.8rem;
+  }
+  
+  .contact {
+    font-size: 0.8rem;
+  }  
+  
   
 /*ATM PROJECT*/
   
@@ -752,6 +829,44 @@ a:hover .bar4 {
 }
   
 }
+
+
+@media only screen and (max-width:320px) {
+  
+      /*--------------
+     ABOUT
+-------------*/
+
+
+  
+.hello {
+  font-size: 6rem;
+}
+
+
+.presentation {
+  margin: 0 auto;
+  padding-right: 1.8rem;
+  
+  font-size: 1rem;
+  
+  bottom: 2.2rem;
+  left: 2.5rem;
+}
+ 
+  .contact-section {
+    padding-right: 1.8rem;
+    
+    left: 2.5rem;
+  }
+  
+  .contact {
+    font-size: 0.8rem;
+  }
+  
+  
+}
+
 
 
 /*
