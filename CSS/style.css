@@ -39,6 +39,10 @@ NAVIGATION
 
 
 /*LANGUAGE*/
+.lang-homepage {
+  opacity: 0;
+}
+
 .lang {
   align-self: flex-end;
   
@@ -46,16 +50,16 @@ NAVIGATION
   font-weight: 200;
   text-transform: uppercase;
   text-decoration: none;
-  color: #ececec; 
+  color: #909090; 
 }
 
 .lang-en {
-  color: #909090;
+  color: #ececec;
   font-weight: 600;
 }
 
 .lang-it {
-  color: #909090;
+  color: #ececec;
   font-weight: 600;
 }
 
@@ -139,29 +143,45 @@ ul {
   
   background-repeat: no-repeat;
   background-position: center;
+  background-size:cover;
 }
 
 .area-web-design {
   background-image: url(../IMG/ATM-prototype.png);
+  
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/tuesdays-magazine.png);
+  background-image: url(../IMG/cover-book-4.png);
 }
 
 .area-photography {
-  background-image: url(../IMG/tuesdays-responsive.png);
+  background-image: url(../IMG/espressione-libri-2.png);
 }
 
 .area-painting {
-  background-image: url(../IMG/D&G-prototype.png);
+  background-image: url(../IMG/t-shirt-2.png);
 }
 
 .background {
+  opacity:0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height:100%;
+  
+}
+
+.background:hover {
+  opacity: 1;
   background-color: rgba(45, 45, 45, 0.9);
+}
+
+.headline {
+  margin: 0;
+  text-align: center;
+  padding-top: 27%;
+  
+  font-size: 3rem;
 }
 
 /*--------------
