@@ -147,16 +147,16 @@ ul {
 }
 
 .area-web-design {
-  background-image: url(../IMG/ATM-prototype.png);
+  background-image: url(../IMG/D_G_home.png);
   
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/cover-book-4.png);
+  background-image: url(../IMG/abacedario-2.png);
 }
 
 .area-photography {
-  background-image: url(../IMG/espressione-libri-2.png);
+  background-image: url(../IMG/espressione-libri-1.png);
 }
 
 .area-painting {
@@ -307,39 +307,6 @@ WEB DESIGN
 }
 
 .wd::after {
-  opacity: 1;
-  border-bottom: 0.18rem solid #ececec;
-  content: "";
-  left: 0;
-  margin-top: calc(0.18rem / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
-
-.gd::after {
-  opacity: 1;
-  border-bottom: 0.18rem solid #ececec;
-  content: "";
-  left: 0;
-  margin-top: calc(0.18rem / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
-
-.ph::after {
-  opacity: 1;
-  border-bottom: 0.18rem solid #ececec;
-  content: "";
-  left: 0;
-  margin-top: calc(0.18rem / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
-
-.pt::after {
   opacity: 1;
   border-bottom: 0.18rem solid #ececec;
   content: "";
