@@ -119,32 +119,6 @@ ul {
   font-size: 0.8rem;
 }*/
 
-/*.strikeout {
-  line-height: 1rem;
-  position: relative;
-}
-.strikeout:hover::after {
-  opacity: 1;
-  border-bottom: 0.18rem solid #ececec;
-  content: "";
-  left: 0;
-  margin-top: calc(0.18rem / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
-
-.wd::after {
-  opacity: 1;
-  border-bottom: 0.18rem solid #ececec;
-  content: "";
-  left: 0;
-  margin-top: calc(0.18rem / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
-}*/
-
 .wd {
   font-weight: 600;
   color:#696969; 
@@ -227,7 +201,9 @@ p {
 }
 
 .content-about {
-  padding-top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hello {
@@ -533,7 +509,7 @@ NAVIGATION
 
   
 .navigation-bar {
-  padding: 0;
+  padding: 0 0.6rem 0 0.6rem;
   padding-top: 0.6rem;
   width: 100vw;
   height: 55px;
@@ -551,24 +527,23 @@ NAVIGATION
 /*PRESENTATION*/
 
 .monogram {
-  text-align: center;
   padding-top: 0;
 }
 
 .monogram img {
-  width: 40%;
+  width: 17%;
   
 }
 
 .name {
+  margin: 0;
   font-size: 0.5rem;
 }
 
 /*INTERNAL LINKING*/
 
 nav {
-  display: none;
- padding-top: 5rem; 
+display: none; 
 } 
 
 .hamburger {
