@@ -42,9 +42,7 @@
    
  </article>
  
- 
- 
- <div class="menu-open">
+
   <a href="#" class="hamburger">
     <span class="bar bar1"></span>
     <span class="bar bar2"></span>
@@ -55,10 +53,7 @@
   <a href="#" class="cross">
     <span class="bar cross1"></span>
     <span class="bar cross2"></span>
-    <span class="bar cross3"></span>
-    <span class="bar cross4"></span>
   </a> 
- </div>
  
  </section>
  
@@ -141,6 +136,15 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <script>
+$(window).resize(function (){
+  
+  if ( $(window).width() >640 ) {
+    
+    $("nav").show();
+  }
+  
+})   
+  
 $( ".cross" ).hide();
 $( "nav" ).hide();
 $( ".hamburger" ).click(function() {
@@ -155,7 +159,10 @@ $( "nav" ).slideToggle( "slow", function() {
 $( ".cross" ).hide();
 $( ".hamburger" ).show();
 });
-});   
+}); 
+
+
+  
 </script>       
 </body>
 </html>
