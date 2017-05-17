@@ -22,8 +22,9 @@
 <body>
  
   <!-- NAVIGATION !-->
+  <div class="navigation-bar">
   
-  <section class="navigation-bar">
+  <section class="header">
   
   <article class="lang">
   <a href="web_design_ATM.html" hreflang="en" class="lang lang-en">en</a>/
@@ -40,6 +41,26 @@
     </a>
    
  </article>
+ 
+ 
+ 
+ <div class="menu-open">
+  <a href="#" class="hamburger">
+    <span class="bar bar1"></span>
+    <span class="bar bar2"></span>
+    <span class="bar bar3"></span>
+    <span class="bar bar4"></span>
+  </a>
+  
+  <a href="#" class="cross">
+    <span class="bar cross1"></span>
+    <span class="bar cross2"></span>
+    <span class="bar cross3"></span>
+    <span class="bar cross4"></span>
+  </a> 
+ </div>
+ 
+ </section>
  
  
   <nav>
@@ -79,21 +100,10 @@
     </ul>
   </nav>
   
-</section>
+</div>
 
 
 
-  <a href="#" class="hamburger">
-   <div class="menu">
-    <span class="bar bar1"></span>
-    <span class="bar bar2"></span>
-    <span class="bar bar3"></span>
-    <span class="bar bar4"></span>
-    </div>
-  </a> 
- 
- 
- 
  
  <section class="content">
  
@@ -127,7 +137,25 @@
    <span class="arrow4"></span>
  </a>
   
-</section>    
+</section>  
   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script>
+$( ".cross" ).hide();
+$( "nav" ).hide();
+$( ".hamburger" ).click(function() {
+$( "nav" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+});
+});
+
+$( ".cross" ).click(function() {
+$( "nav" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});   
+</script>       
 </body>
 </html>
