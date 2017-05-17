@@ -135,19 +135,14 @@
 </section>  
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script>
-$(window).resize(function (){
+<script>  
+
   
-  if ( $(window).width() >640 ) {
-    
-    $("nav").show();
-  }
   
-})   
   
 $( ".cross" ).hide();
 $( "nav" ).hide();
-$( ".hamburger" ).click(function() {
+$( ".hamburger" ).click(function () {
 $( "nav" ).slideToggle( "slow", function() {
 $( ".hamburger" ).hide();
 $( ".cross" ).show();
@@ -161,8 +156,33 @@ $( ".hamburger" ).show();
 });
 }); 
 
-
   
-</script>       
+$(function() {
+	
+	menu 		= $('nav');
+	menuHeight	= menu.height();
+   
+    $(window).resize(function(){
+		var w = $(window).width();
+		if(w > 640 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+	});
+});  
+  
+/*
+$(window).resize(function (){
+  
+  if ( $(window).width() > 640 ) {
+    
+    $("nav").removeAttr('style');
+  }
+  
+})
+  */
+</script> 
+
+      
+                  
 </body>
 </html>
