@@ -22,40 +22,40 @@
 <body>
  
   <!-- NAVIGATION !-->
-  <div class="navigation-bar">
+  <div class="navigation-bar hidden-nav" id="navigation-bar">
   
-  <section class="header">
-  
-  <article class="lang">
-  <a href="web_design_ATM.html" hreflang="en" class="lang lang-en">en</a>/
-  <a href="web_design_ATM-ita.html" hreflang="it" class="lang it">it</a>
-  </article>
-  
-  
-  <article class="monogram">
-       
-    <a href="index.html" class="logo">
-      <img class="monogram-img" src="./IMG/monogram.png" alt="Elisabetta Cona Monogram - EC">     
-      <h1 class="name">ELISABETTA CONA</h1>
-      <h2 class="profession">Web and Graphic Designer</h2>
-    </a>
-   
- </article>
- 
+    <section class="header">
 
-  <a href="#" class="hamburger">
-    <span class="bar bar1"></span>
-    <span class="bar bar2"></span>
-    <span class="bar bar3"></span>
-    <span class="bar bar4"></span>
-  </a>
-  
-  <a href="#" class="cross">
-    <span class="bar cross1"></span>
-    <span class="bar cross2"></span>
-  </a> 
- 
- </section>
+    <article class="lang">
+    <a href="web_design_ATM.html" hreflang="en" class="lang lang-en">en</a>/
+    <a href="web_design_ATM-ita.html" hreflang="it" class="lang it">it</a>
+    </article>
+
+
+    <article class="monogram">
+
+      <a href="index.html" class="logo">
+        <img class="monogram-img" src="./IMG/monogram.png" alt="Elisabetta Cona Monogram - EC">     
+        <h1 class="name">ELISABETTA CONA</h1>
+        <h2 class="profession">Web and Graphic Designer</h2>
+      </a>
+
+   </article>
+
+
+    <a href="#" class="hamburger" id="open-menu">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+      <span class="bar bar4"></span>
+    </a>
+
+    <a href="#" class="cross" id="close-menu">
+      <span class="bar cross1"></span>
+      <span class="bar cross2"></span>
+    </a> 
+
+   </section>
  
  
   <nav>
@@ -134,55 +134,6 @@
   
 </section>  
   
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script>  
-
-  
-  
-  
-$( ".cross" ).hide();
-$( "nav" ).hide();
-$( ".hamburger" ).click(function () {
-$( "nav" ).slideToggle( "slow", function() {
-$( ".hamburger" ).hide();
-$( ".cross" ).show();
-});
-});
-
-$( ".cross" ).click(function() {
-$( "nav" ).slideToggle( "slow", function() {
-$( ".cross" ).hide();
-$( ".hamburger" ).show();
-});
-}); 
-
-  
-$(function() {
-	
-	menu 		= $('nav');
-	menuHeight	= menu.height();
-   
-    $(window).resize(function(){
-		var w = $(window).width();
-		if(w > 640 && menu.is(':hidden')) {
-			menu.removeAttr('style');
-		}
-	});
-});  
-  
-/*
-$(window).resize(function (){
-  
-  if ( $(window).width() > 640 ) {
-    
-    $("nav").removeAttr('style');
-  }
-  
-})
-  */
-</script> 
-
-      
-                  
+<script src="JS/script.js"></script> 
 </body>
 </html>
