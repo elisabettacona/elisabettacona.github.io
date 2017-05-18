@@ -608,6 +608,10 @@ NAVIGATION
     font-size: 2rem;
   }  
 
+  .wd {
+  font-weight: 400; 
+}
+  
   /*HAMBURGER*/  
 
     .manu-open {
