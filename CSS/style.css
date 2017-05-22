@@ -530,55 +530,22 @@ WEB DESIGN
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* MAIN BREAKPOINT*/
 
 
 @media only screen and (max-width:640px) {
-  
- /*---------
-NAVIGATION 
----------*/
-
-  .navigation-bar {
-    padding: 0;
-    width:0vw;
-    background-color: transparent;
-    
-    z-index: 1;
-  } 
-  
-  .header {
-    background-color: #333;
-    position: absolute;
-    padding: 0 0.6rem 0 0.6rem;
-    padding-top: 0.6rem;
-    width: 100vw;
-    height: 55px;
-
-    flex-direction: row;
-
-    z-index: 1;
-  }
-
-  
-  /* Mobile navigation classes */
-  
-  .hamburger {
-    display: none;
-  }
-  .hidden-nav .hamburger {
-    display: block;
-  }
-  .hidden-nav nav {
-    transform: translateY(-100%);
-    
-    transition: transform 500ms ease;
-  }
-  .hidden-nav .cross {
-    display: none;
-  }
-  
-  
   
   /*PRESENTATION*/
 
@@ -602,6 +569,34 @@ NAVIGATION
   display: none;
   } 
 
+  
+  
+  /*---------
+NAVIGATION 
+---------*/
+
+  .navigation-bar {
+    padding: 0;
+    width:0vw;
+    background-color: transparent;
+    
+    z-index: 1;
+  } 
+  
+  .header {
+    background-color: #333;
+    position: absolute;
+    padding: 0 0.6rem 0 0.6rem;
+    padding-top: 0.6rem;
+    width: 100vw;
+    height: 55px;
+
+    flex-direction: row;
+
+    z-index: 1;
+  }
+  
+  
   /*INTERNAL LINKING*/
 
   nav {
@@ -618,7 +613,7 @@ NAVIGATION
   }
 
   .about {
-    padding-bottom: 0;;
+    padding-bottom: 1.6rem;
   }
 
   nav li {
@@ -728,6 +723,25 @@ NAVIGATION
   }  
 
 
+  
+   /* Mobile navigation classes */
+  
+  .hamburger {
+    display: none;
+  }
+  .hidden-nav .hamburger {
+    display: block;
+  }
+  .hidden-nav nav {
+    transform: translateY(-100%);
+    
+    transition: transform 500ms ease;
+  }
+  .hidden-nav .cross {
+    display: none;
+  }
+  
+  
 
 
   /*---------
