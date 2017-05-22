@@ -24,7 +24,7 @@ NAVIGATION
 
 .navigation-bar {
   position: fixed;
-  width: 15vw;
+  width: 200px;
   height: 100vh;
   
   display: flex;
@@ -61,6 +61,7 @@ NAVIGATION
   font-weight: 600;
 }
 
+/*PRESENTATION*/
 /*PRESENTATION*/
 
 .monogram {
@@ -134,7 +135,7 @@ ul {
 
 .homepage {
   margin-left: auto;
-  width: 85vw;
+  width: calc(100vw - 200px);
   height: 100vh;
 }
 
@@ -301,6 +302,7 @@ WEB DESIGN
   height: 5px;
   
   background-color: brown;
+  position: absolute;
 }
 
 .line-space {
@@ -539,7 +541,7 @@ NAVIGATION
 
   .navigation-bar {
     padding: 0;
-    width: 100vw;
+    width:0vw;
     background-color: transparent;
     
     z-index: 1;
@@ -558,6 +560,26 @@ NAVIGATION
     z-index: 1;
   }
 
+  
+  /* Mobile navigation classes */
+  
+  .hamburger {
+    display: none;
+  }
+  .hidden-nav .hamburger {
+    display: block;
+  }
+  .hidden-nav nav {
+    transform: translateY(-100%);
+    
+    transition: transform 500ms ease;
+  }
+  .hidden-nav .cross {
+    display: none;
+  }
+  
+  
+  
   /*PRESENTATION*/
 
   .monogram {
@@ -857,20 +879,6 @@ NAVIGATION
     .contact {
       font-size: 0.8rem;
     }
-
-  /* Mobile navigation classes */
-  .hamburger {
-    display: none;
-  }
-  .hidden-nav .hamburger {
-    display: block;
-  }
-  .hidden-nav nav {
-    transform: translateY(-100%);
-  }
-  .hidden-nav .cross {
-    display: none;
-  }
   
   
 }
