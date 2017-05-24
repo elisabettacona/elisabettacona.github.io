@@ -62,7 +62,7 @@ NAVIGATION
 }
 
 /*PRESENTATION*/
-/*PRESENTATION*/
+
 
 .monogram {
   padding-top: 3rem;
@@ -73,6 +73,7 @@ NAVIGATION
 }
 
 .name {
+  font-size: 1rem;
   margin-top: 0.5rem;
   
   font-weight: 400;
@@ -401,12 +402,8 @@ WEB DESIGN
 @media only screen and (max-width:1360px) {
   
   .monogram img {
-  width: 60%;
+    width: 40%;
 }
-  
-  .name {
-    font-size: 0.8rem;
-  }
   
 }
 
@@ -427,11 +424,6 @@ WEB DESIGN
 .portfolio-nav {
   font-size: 0.65rem;
 }
-  
-  
-  .name {
-    font-size: 0.7rem;
-  }
   
   
   
@@ -555,7 +547,7 @@ WEB DESIGN
   }
 
   .monogram img {
-    width: 10%;
+    width: 9%;
 
   }
 
@@ -589,7 +581,7 @@ NAVIGATION
     padding: 0 0.6rem 0 0.6rem;
     padding-top: 0.6rem;
     width: 100vw;
-    height: 55px;
+    height: 60px;
 
     flex-direction: row;
 
@@ -751,7 +743,7 @@ NAVIGATION
   .homepage {
     margin-left: 0;
     width: 100vw;
-    height: 95vh;
+    height: calc(100vh-60px);
     position: absolute;
     bottom: 0;
   }
@@ -811,6 +803,7 @@ NAVIGATION
 
   .content {
     margin-left: auto;
+    margin-top: calc(100vh-60px);
     width: 100vw;
 
     display: flex;
