@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
+  
 }
 
 body {
   margin: 0;
+  padding: 0;
   
   font-family: 'Helvetica', 'Arial', sans-serif;
   
@@ -11,8 +13,12 @@ body {
 }
 
 .first-section {
+  margin: 0;
+  padding: 0;
  width: 100vw;
   height: 100vh; 
+  
+  overflow: hidden;
 }
 
 .first-animation {
@@ -49,13 +55,10 @@ nav {
 ul {
   margin: 0;
   padding: 0;
-  
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
 }
 
 li {
+  padding: 2rem 0;
   
   list-style: none;
   
