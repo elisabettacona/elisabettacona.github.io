@@ -5,7 +5,7 @@
 body {
   margin: 0;
   
-  background-color: #ececec;
+  background-color: #fff;
   
   font-size: 100%;
   font-family: 'Roboto', 'Helvetica', sans-serif;
@@ -24,31 +24,78 @@ NAVIGATION
 
 .navigation-bar {
   position: fixed;
-  width: 200px;
-  height: 100vh;
+  width: 100vw;
+  height: 60px;
   
   display: flex;
-  flex-direction: column;
   
-  background-color:#242424; /*#333*/
-  
-  padding: 1rem;
+  background-color:#333; /*#333*/
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.monogram {
+  padding-left: 1rem;
+}
+
+.monogram img {
+  width: 20%;
+}
+
+/*.name {
+  margin: 0;
+  padding: 0;
+  
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1rem;
+}*/
+
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  margin-left: auto;
+}
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  
+  font-weight: 400;
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 0 1.5rem;
+}
+
 
 /*LANGUAGE*/
 .lang-homepage {
-  opacity: 0;
+  opacity: 1;
 }
 
 .lang {
-  align-self: flex-end;
   
-  font-size: 0.75rem;
+  font-size: 0.80rem;
   font-weight: 200;
   text-transform: uppercase;
   text-decoration: none;
   text-align: right;
   color: #909090; 
+}
+
+.lang-padding {
+  padding-right: 3rem;
 }
 
 .lang-en {
@@ -60,66 +107,6 @@ NAVIGATION
   color: #ececec;
   font-weight: 600;
 }
-
-/*PRESENTATION*/
-
-
-.monogram {
-  padding-top: 3rem;
-}
-
-.monogram img {
-  width: 50%;
-}
-
-.name {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  
-  font-weight: 400;
-  text-decoration: none;
-  
-  color: #ececec;
-}
-
-.profession {
-  display: none;
-}
-
-/*INTERNAL LINKING*/
-
-.main-nav {
-display: block;
-  
- padding-top: 5rem;
-}
-
-.about {
-  padding-bottom: 1rem;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  
-  font-weight: 400;
-  
-  text-transform: uppercase;
-  list-style-type: none;
-}
-
-.portfolio-nav {
-  font-size: 0.75rem;
-  font-weight: 200;
-}
-
-
-/*.footer {
-  align-self: flex-end;
-  color: #ececec;
-  font-weight: 200;
-  font-size: 0.8rem;
-}*/
 
 .wd {
   font-weight: 600;
@@ -135,9 +122,10 @@ ul {
 /*HOMEPAGE*/
 
 .homepage {
-  margin-left: auto;
-  width: calc(100vw - 200px);
-  height: 100vh;
+  position: absolute;
+  bottom:0;
+  height: calc(100vh - 60px);
+  width: 100vw;
 }
 
 .area {
@@ -261,14 +249,15 @@ p {
 
 
 /*---------
-WEB DESIGN
+   WORK
 ---------*/
 
 /*PROJECTS*/
 
 .content {
-  margin-left: auto;
-  width: 85vw;
+  margin-top:60px;
+  width: 100vw;
+  
   
   display: flex;
   justify-content: space-around;
@@ -277,10 +266,10 @@ WEB DESIGN
 .wrapper {
   margin: 0 auto;
   width: 75%;
-  margin-top: 5vh;
-  margin-bottom:10vh;
+  margin-top: 8vh;
+  margin-bottom:8vh;
   
-  background-color: #ececec;
+  background-color: #fff;
 }
 
 .project-title {
@@ -327,18 +316,20 @@ WEB DESIGN
 
 .arrow_left {
   position:fixed;
-  left: 16vw;
+  left: 0;
   top: 45vh;
   
   height: 100px;
+  width: 55px;
 }
 
 .arrow_right {
   position:fixed;
-  right: 1.5rem;
+  right: 0;
   top: 45vh;
   
   height: 100px;
+  width: 55px;
   
 }
 
@@ -370,26 +361,26 @@ WEB DESIGN
 .arrow3 {
   transform:rotate(45deg);
   background:#333;
-  border-radius:100px;
+  border-radius:60px;
   
   width: 60px;
   height: 12px;
   
   position: absolute;
-  right:30%;
+  right:0;
   top: 25%;
 }
 
 .arrow4 {
   transform:rotate(-45deg);
   background:#333;
-  border-radius:100px;
+  border-radius:60px;
   
   width: 60px;
   height: 12px;
   
   position: absolute;
-  right:30%;
+  right:0;
   top: 60%;
 }
 
@@ -397,29 +388,7 @@ WEB DESIGN
 
 
 
-
-
-@media only screen and (max-width:1360px) {
-  
-  .monogram img {
-    width: 40%;
-}
-  
-}
-
-
-
-
-@media only screen and (max-width:1024px) {
-
-  .lang {
-    font-size: 0.7rem;
-  }
-  
-  
-  li {
-    font-size: 0.9rem;
-  }  
+@media only screen and (max-width:1024px) { 
   
 .portfolio-nav {
   font-size: 0.65rem;
@@ -449,10 +418,6 @@ WEB DESIGN
 
 @media only screen and (max-width:800px) {
   
-  li {
-    font-size:0.7rem ;
-  }
-  
   .portfolio-nav {
     font-size:0.55rem ;
   }
@@ -478,15 +443,6 @@ WEB DESIGN
 }
 
 
-.presentation {
-  font-size: 1.5rem;
-  
-  padding-right: 3rem;
-  bottom: 0;
-  left: 0;
-}
-
-
 .contact-section {
   
   padding-right: 3rem;
@@ -501,14 +457,6 @@ WEB DESIGN
 .hello {
   font-size: 8rem;
  
-}
-
-
-.presentation {
-  font-size: 1rem;
-  
-  bottom: 2.7rem;
-  left: 0.5rem;
 }
  
   .contact-section {
@@ -541,51 +489,30 @@ WEB DESIGN
   
   /*PRESENTATION*/
 
-  .monogram {
-    order: -1;
-    padding-top: 0;
-  }
-
   .monogram img {
-    width: 9%;
+    width: 22%;
 
-  }
-
-  .name {
-    margin: 0;
-    font-size: 0.45rem;
-  }
-
-    /*LANGUAGE*/
-  .lang {
-  display: none;
   } 
-
-  
-  
+ 
   /*---------
 NAVIGATION 
 ---------*/
-
+  
   .navigation-bar {
-    padding: 0;
     width:0vw;
-    background-color: transparent;
-    
+    height: 0vh;
     z-index: 1;
   } 
   
   .header {
     background-color: #333;
-    position: absolute;
-    padding: 0 0.6rem 0 0.6rem;
-    padding-top: 0.6rem;
+    position: fixed;
     width: 100vw;
     height: 60px;
 
-    flex-direction: row;
-
     z-index: 1;
+    
+    justify-content: flex-start;
   }
   
   
@@ -594,38 +521,13 @@ NAVIGATION
   nav {
     width: 100vw;
     height: 100vh;
-
-    background-color: #333;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
   }
-
-  .about {
-    padding-bottom: 1.6rem;
-  }
-
-  nav li {
-    font-size: 2rem;
-    padding: 2rem;
-  }
-
-  .portfolio-nav {
-    font-size: 2rem;
-  }  
 
   .wd {
   font-weight: 400; 
 }
   
-  /*HAMBURGER*/  
-
-    .manu-open {
-      position: relative;
-    }  
+  /*HAMBURGER*/   
 
   .hamburger {
     display: block;
@@ -729,12 +631,33 @@ NAVIGATION
     
     transition: transform 500ms ease;
   }
+  
   .hidden-nav .cross {
     display: none;
   }
   
+  .main-nav {
+    background-color: #333;
+  }
   
-
+  ul {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  li {
+    font-size: 2.5rem;
+    padding: 2rem;
+  }
+ 
+  .lang {
+    font-size: 1.8rem;
+  }  
+  
+  
+  
 
   /*---------
     HOMEPAGE
@@ -749,7 +672,7 @@ NAVIGATION
   }
 
   .area {
-    width: 100%;
+    width: 100vw;
     height: 25%;
   }  
 
