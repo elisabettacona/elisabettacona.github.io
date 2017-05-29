@@ -18,69 +18,6 @@ a {
   color: #ececec;
 }
 
-/*---------
-   INTRO 
----------*/
-
-.intro-home {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  background-color: #333;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  
-  animation: introduction 2s ease-in-out;
-  transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  
-  opacity: 1;
-}
-
-.intro-name, .intro-profession {
-  margin: 0;
-  padding: 0;
-  
-   color: #ececec;
-}
-
-.intro-name {
-  font-size: 3rem;
-}
-
-.intro-profession {
-  font-size: 1.5rem;
-  font-weight: 200;
-  
-  padding-bottom: 10vh;
-}
-
-@keyframes introduction {
-  0% {
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0); 
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  50% {
-    opacity: 1;
-  }
-  
-  100% {
-    -ms-transform: translateY(-100%);
-    -webkit-transform: translateY(-100%); 
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
-
-
 
 /*---------
 NAVIGATION 
@@ -109,15 +46,6 @@ NAVIGATION
 .monogram img {
   width: 20%;
 }
-
-/*.name {
-  margin: 0;
-  padding: 0;
-  
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: 1rem;
-}*/
 
 .main-nav {
   display: flex;
@@ -231,7 +159,9 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(45, 45, 45, 0.8);
+  
+  border: 1px solid #ececec;
+  /*background-color: rgba(45, 45, 45, 0.8);*/
 }
 
 .background h3 {
@@ -243,6 +173,8 @@ li {
 }
 
 .background:hover {
+  border: 0;
+  
   background-color: rgba(45, 45, 45, 0.9);
 }
 
