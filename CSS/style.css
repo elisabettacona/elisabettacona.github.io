@@ -194,81 +194,22 @@ li {
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
-  
-  border: 1px solid #ececec;
-  transition: border 500ms ease;
 }
 
 .area-web-design {
   background-image: url(../IMG/ATM-prototype.png);
-  
-  animation: introduction 1s ease-out 500ms;
 }
 
 .area-graphic-design {
   background-image: url(../IMG/tuesdays-responsive.png);
-  
-  animation: introduction2 1s ease-out 500ms;
 }
 
 .area-photography {
   background-image: url(../IMG/agape-02.png);
-  
-  animation: introduction 1s ease-out 500ms;
-   -ms-transform: translateX(0);
-    -webkit-transform: translateX(0); 
-    transform: translateX(0);
 }
 
 .area-painting {
   background-image: url(../IMG/D&G-prototype.png);
-  
-  animation: introduction2 1s ease-out 500ms;
-}
-
-
-@keyframes introduction {
-  0% {
-    -ms-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%); 
-    transform: translateX(-100%);
-    opacity: 0;
-    border: 0;
-  }
-  
-  50% {
-    
-  }
-  
-  100% {
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0); 
-    transform: translateX(0);
-    opacity: 1;
-    border: 1px solid #ececec;
-  }
-}
-
-@keyframes introduction2 {
-  0% {
-    -ms-transform: translateX(100%);
-    -webkit-transform: translateX(100%); 
-    transform: translateX(100%);
-    opacity: 0;
-    border: 0;
-  }
-  
-  50% {
-    
-  }
-  
-  100% {
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0); 
-    transform: translateX(0);
-    opacity: 1;
-    border: 1px solid #ececec;
-  }
 }
 
 
@@ -284,6 +225,8 @@ li {
   /*background-color: rgba(45, 45, 45, 0.8);*/
   
   transition: background 500ms;
+  
+  border: 1px solid #ececec;
 }
 
 .background h3 {
@@ -302,7 +245,7 @@ li {
 }
 
 .background:hover {
-  
+  border: 1px solid rgba(45, 45, 45, 0.1);
   background-color: rgba(45, 45, 45, 0.9);
 }
 
@@ -437,8 +380,26 @@ p {
   margin-top: 1rem;
 }
 
+.line-atm {
+  background-color: #fc6100;
+}
+.line-dg {
+  background-color: #acacac;
+}
+.line-mag {
+  background-color: #f0b1da;
+}
+.line-agape {
+  background-color: #ffcf2d;
+}
+.line-aba {
+  background-color: #608fd0;
+}
+
+
+
 .invision {
-  color: brown;
+  color: #fc6100;
 }
 
 .screens {
