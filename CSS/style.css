@@ -196,6 +196,7 @@ li {
   background-size:cover;
   
   border: 1px solid #ececec;
+  transition: border 500ms ease;
 }
 
 .area-web-design {
@@ -301,7 +302,6 @@ li {
 }
 
 .background:hover {
-  border: 1px solid rgba(45, 45, 45, 0.2);
   
   background-color: rgba(45, 45, 45, 0.9);
 }
