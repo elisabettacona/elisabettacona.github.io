@@ -232,6 +232,7 @@ li {
     -webkit-transform: translateX(-100%); 
     transform: translateX(-100%);
     opacity: 0;
+    border: 0;
   }
   
   50% {
@@ -243,6 +244,7 @@ li {
     -webkit-transform: translateX(0); 
     transform: translateX(0);
     opacity: 1;
+    border: 1px solid #ececec;
   }
 }
 
@@ -252,6 +254,7 @@ li {
     -webkit-transform: translateX(100%); 
     transform: translateX(100%);
     opacity: 0;
+    border: 0;
   }
   
   50% {
@@ -263,6 +266,7 @@ li {
     -webkit-transform: translateX(0); 
     transform: translateX(0);
     opacity: 1;
+    border: 1px solid #ececec;
   }
 }
 
