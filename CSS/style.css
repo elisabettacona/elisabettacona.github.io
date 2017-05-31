@@ -24,24 +24,34 @@ a {
 ---------*/
 
 .intro-home {
-  position: absolute;
-  z-index: 1;
   width: 100vw;
   height: 100vh;
   background-color: #333;
   
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   
-  animation: introduction 2s ease-in-out;
+  /*animation: introduction 2s ease-in-out;
   transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   -webkit-transform: translateY(-100%);
   
-  opacity: 1;
+  opacity: 1;*/
 }
+
+
+/*.homepage-animation {
+  animation: introduction 2s ease-in-out;
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  
+  opacity: 1;
+}*/
+
+
 
 .intro-name, .intro-profession {
   margin: 0;
@@ -61,25 +71,7 @@ a {
   padding-bottom: 10vh;
 }
 
-@keyframes introduction {
-  0% {
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0); 
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  50% {
-    opacity: 1;
-  }
-  
-  100% {
-    -ms-transform: translateY(-100%);
-    -webkit-transform: translateY(-100%); 
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
+
 
 
 /*---------
@@ -182,6 +174,8 @@ li {
   bottom:0;
   height: calc(100vh - 60px);
   width: 100vw;
+  
+  overflow: hidden;
 }
 
 .area {
@@ -199,19 +193,68 @@ li {
 .area-web-design {
   background-image: url(../IMG/ATM-prototype.png);
   
+  animation: introduction 1s ease-out 500ms;
 }
 
 .area-graphic-design {
   background-image: url(../IMG/tuesdays-responsive.png);
+  
+  animation: introduction2 1s ease-out 500ms;
 }
 
 .area-photography {
   background-image: url(../IMG/agape-02.png);
+  
+  animation: introduction 1s ease-out 500ms;
 }
 
 .area-painting {
   background-image: url(../IMG/D&G-prototype.png);
+  
+  animation: introduction2 1s ease-out 500ms;
 }
+
+
+@keyframes introduction {
+  0% {
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%); 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
+  50% {
+    
+  }
+  
+  100% {
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0); 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes introduction2 {
+  0% {
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%); 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  50% {
+    
+  }
+  
+  100% {
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0); 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 .background {
   opacity:1;
@@ -225,21 +268,34 @@ li {
   
   border: 1px solid #ececec;
   /*background-color: rgba(45, 45, 45, 0.8);*/
+  
+  transition: background 500ms;
 }
 
 .background h3 {
   opacity: 0;
+  
+  transform: rotateY(45deg);
+  transition: all 500ms;
+  
+  font-family: 'Sintony', sans-serif;
 }
 
 .background:hover h3 {
   opacity: 1;
+  
+  transform: rotateY(0);
 }
 
 .background:hover {
-  border: 0;
+  border: 1px solid rgba(45, 45, 45, 0.2);
   
   background-color: rgba(45, 45, 45, 0.9);
 }
+
+
+
+
 
 .headline {
   margin: 0;
@@ -258,13 +314,6 @@ p {
   padding: 0;
 }
 
-.content-about {
-  padding-top: 15vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .hello {
   color: #ececec;
   
@@ -276,7 +325,7 @@ p {
 
 
 .presentation {
-  font-weight: 900;
+  font-weight: 500;
   font-size: 2rem;
   
   padding-right: 2rem;
@@ -302,7 +351,7 @@ p {
   color: #333;
   
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
 }
 
@@ -343,16 +392,24 @@ p {
 .project-title {
   margin: 0.3rem 0 0 0;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #333;
+  
+  font-family: 'Sintony', sans-serif;
+  letter-spacing: -1.5px;
 }
 
 .project-topic {
   font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .intro {
   padding-bottom: 5rem;
+}
+
+.intro p {
+  line-height: 125%;
 }
 
 .line {
@@ -760,6 +817,33 @@ NAVIGATION
     height: 25%;
   }  
 
+  
+  .area-web-design {
+  background-image: url(../IMG/ATM-prototype.png);
+  
+  animation: introduction 1s ease-out 400ms;
+}
+
+.area-graphic-design {
+  background-image: url(../IMG/tuesdays-responsive.png);
+  
+  animation: introduction2 1s ease-out 450ms;
+}
+
+.area-photography {
+  background-image: url(../IMG/agape-02.png);
+  
+  animation: introduction 1s ease-out 450ms;
+}
+
+.area-painting {
+  background-image: url(../IMG/D&G-prototype.png);
+  
+  animation: introduction2 1s ease-out 400ms;
+}
+  
+  
+  
   .headline {
     font-size: 2rem;
   }  
