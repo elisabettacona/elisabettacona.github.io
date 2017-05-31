@@ -94,6 +94,12 @@ NAVIGATION
   align-items: center;
 }
 
+.elisabettacona {
+  font-weight: 500;
+  
+  
+}
+
 .monogram {
   padding-left: 1rem;
 }
@@ -188,6 +194,8 @@ li {
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
+  
+  border: 1px solid #ececec;
 }
 
 .area-web-design {
@@ -206,6 +214,9 @@ li {
   background-image: url(../IMG/agape-02.png);
   
   animation: introduction 1s ease-out 500ms;
+   -ms-transform: translateX(0);
+    -webkit-transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .area-painting {
@@ -265,8 +276,6 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  border: 1px solid #ececec;
   /*background-color: rgba(45, 45, 45, 0.8);*/
   
   transition: background 500ms;
