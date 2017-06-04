@@ -82,6 +82,7 @@ NAVIGATION
   position: fixed;
   width: 100vw;
   height: 60px;
+  z-index: 1;
   
   display: flex;
   
@@ -281,8 +282,13 @@ p {
 
 
 .presentation {
+<<<<<<< Updated upstream
   font-weight: 500;
   font-size: 2rem;
+=======
+  font-weight: 900;
+  font-size: 1.8rem;
+>>>>>>> Stashed changes
   
   padding-right: 2rem;
   
@@ -362,10 +368,21 @@ p {
 
 .intro {
   padding-bottom: 5rem;
+  
+  display: flex;
+  flex-direction: column;
 }
 
 .intro p {
   line-height: 125%;
+  
+  width: 55%;
+  
+  align-self: center;
+}
+
+.line-space {
+  align-self: flex-end;
 }
 
 .line {
@@ -373,7 +390,6 @@ p {
   height: 5px;
   
   background-color: brown;
-  position: absolute;
 }
 
 .line-space {
@@ -387,7 +403,7 @@ p {
   background-color: #acacac;
 }
 .line-mag {
-  background-color: #f0b1da;
+  background-color: #e6cadd;
 }
 .line-agape {
   background-color: #ffcf2d;
@@ -407,6 +423,24 @@ p {
   
   margin-bottom: 3rem;
 }
+
+
+.container-text-img {
+  text-align: center;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-text-img p{
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 700;
+  
+}
+
 
 
 /*-------
@@ -532,22 +566,6 @@ p {
      ABOUT
 -------------*/
 
-.content-about {
-  padding-top: 8vh;
-}
-
-.hello {
-  font-size: 13rem;
- 
-}
-
-
-.contact-section {
-  
-  padding-right: 3rem;
-  
-  left: 0;
-}
 
 .contact {
   padding:0.2rem 2rem 0 0;
@@ -558,8 +576,14 @@ p {
  
 }
  
+  .presentation {
+    bottom: 2rem;
+    left: 0.3rem;
+  }
+  
   .contact-section {
-    left: 0.5rem;
+    padding-right: 3rem;
+    left: 0.3rem;
   }
   
   .contact {
@@ -890,13 +914,6 @@ NAVIGATION
     font-size: 1rem;
   }
 
-  .line {
-    position: absolute;
-    width: 30px;
-    height: 5px;
-    background-color: brown;
-  }
-
     .intro {
     padding-bottom: 3rem;
   }
@@ -906,10 +923,6 @@ NAVIGATION
       /*--------------
        ABOUT
   -------------*/
-
-  .content-about {
-    padding-top: 0;
-  }
 
 
   .presentation {
