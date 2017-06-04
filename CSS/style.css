@@ -367,18 +367,20 @@ p {
 }
 
 .intro {
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
   
   display: flex;
   flex-direction: column;
 }
 
-.intro p {
+.description {
   line-height: 125%;
   
   width: 55%;
   
   align-self: center;
+  
+  font-size: 1.2rem;
 }
 
 .line-space {
@@ -441,6 +443,19 @@ p {
   
 }
 
+
+/*TUESDAYS*/
+
+.tuesdays-gifs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tuesdays-gifs img {
+  width: 70%;
+}
 
 
 /*-------
@@ -521,13 +536,31 @@ p {
 
 
 
+@media only screen and (max-width:1360px) {
+  
+  .description {
+  width: 70%;
+  }
+  
+}
+
+
+
+
+
+
+
 @media only screen and (max-width:1024px) { 
   
 .portfolio-nav {
   font-size: 0.65rem;
 }
   
+  .description {
+  width: 100%;
   
+  font-size: 1rem;
+}
   
   /*--------------
      ABOUT
