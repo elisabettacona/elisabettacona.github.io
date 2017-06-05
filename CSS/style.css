@@ -339,15 +339,18 @@ p {
   align-items: center;
 }
 
-.internal-linking img {
-  width: 2%;
-
+.internal-linking img:hover {
+  opacity: 0.3;
 }
 
 .internal-linking a {
   color: #333;
   
   padding:0.3rem;
+}
+
+.internal-linking a:hover {
+  color: lightgray;
 }
 
 .internal-linking p {
@@ -405,14 +408,20 @@ p {
   flex-direction: column;
 }
 
+
+
 .description {
   line-height: 125%;
   
   width: 55%;
   
-  align-self: ;
+  align-self: center;
   
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.description-first {
+  align-self: flex-start;
 }
 
 .line-space {
@@ -480,13 +489,13 @@ p {
 
 .tuesdays-gifs {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .tuesdays-gifs img {
-  width: 70%;
+  height: 70vh;
+  width: auto;
 }
 
 
@@ -573,6 +582,12 @@ p {
   .description {
   width: 70%;
   }
+  
+  
+  .tuesdays-gifs {
+  flex-direction: column;
+}
+
   
 }
 
@@ -912,6 +927,20 @@ NAVIGATION
   }  
 
 
+  /*works*/
+  
+  .internal-linking {
+    justify-content: center;
+    margin-bottom: 3vh;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
     /*-------
     ARROWS
   -------*/
@@ -965,7 +994,6 @@ NAVIGATION
 
   .wrapper {
     width: 85%;
-    margin-top: 15vh;
     margin-bottom:10vh;
   }
 
@@ -1121,7 +1149,6 @@ NAVIGATION
 
     .wrapper {
     width: 83%;
-    margin-top: 15vh;
     margin-bottom:10vh;
   }
   
