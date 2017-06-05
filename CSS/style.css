@@ -223,9 +223,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: rgba(45, 45, 45, 0.8);*/
   
-  transition: background 500ms;
+  transition: all 400ms;
   
   border: 1px solid #ececec;
 }
@@ -333,6 +332,39 @@ p {
 
 /*PROJECTS*/
 
+
+.internal-linking {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.internal-linking img {
+  width: 2%;
+
+}
+
+.internal-linking a {
+  color: #333;
+  
+  padding:0.3rem;
+}
+
+.internal-linking p {
+  
+  padding:0.1rem 0.4rem;
+}
+
+
+
+.selected-work {
+  border: 1px solid #333;
+}
+
+.arrow-right-internal-linking {
+  transform: rotate(180deg);
+}
+
 .content {
   margin-top:60px;
   width: 100vw;
@@ -378,7 +410,7 @@ p {
   
   width: 55%;
   
-  align-self: center;
+  align-self: ;
   
   font-size: 1.2rem;
 }
