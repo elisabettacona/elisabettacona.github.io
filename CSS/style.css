@@ -11,6 +11,7 @@ body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   
   display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -22,54 +23,6 @@ a {
 /*---------
    INTRO 
 ---------*/
-
-.intro-home {
-  width: 100vw;
-  height: 100vh;
-  background-color: #333;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  /*animation: introduction 2s ease-in-out;
-  transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  
-  opacity: 1;*/
-}
-
-
-/*.homepage-animation {
-  animation: introduction 2s ease-in-out;
-  transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  
-  opacity: 1;
-}*/
-
-
-
-.intro-name, .intro-profession {
-  margin: 0;
-  padding: 0;
-  
-   color: #ececec;
-}
-
-.intro-name {
-  font-size: 3rem;
-}
-
-.intro-profession {
-  font-size: 1.5rem;
-  font-weight: 200;
-  
-  padding-bottom: 10vh;
-}
 
 
 
@@ -281,13 +234,9 @@ p {
 
 
 .presentation {
-<<<<<<< Updated upstream
-  font-weight: 500;
-  font-size: 2rem;
-=======
+
   font-weight: 900;
   font-size: 1.8rem;
->>>>>>> Stashed changes
   
   padding-right: 2rem;
   
@@ -337,6 +286,10 @@ p {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
+  margin-bottom: 3vh;
+  
+  
 }
 
 .internal-linking img:hover {
@@ -380,7 +333,7 @@ p {
 .wrapper {
   margin: 0 auto;
   width: 75%;
-  margin-top: 8vh;
+  margin-top: 4vh;
   margin-bottom:8vh;
   
   background-color: #fff;
@@ -397,7 +350,7 @@ p {
 }
 
 .project-topic {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -500,80 +453,34 @@ p {
 
 
 /*-------
-  ARROWS
+  FOOTER
 -------*/
-
-.arrow_left {
-  position:fixed;
-  left: 0;
-  top: 45vh;
+ 
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
   
-  height: 100px;
-  width: 55px;
+  background-color: #333;
+  color: #ececec;
 }
 
-.arrow_right {
-  position:fixed;
-  right: 0;
-  top: 45vh;
-  
-  height: 100px;
-  width: 55px;
-  
+.other-projects {
+  display: flex;
+  justify-content: space-around;
 }
 
-.arrow1 {
-  transform:rotate(-45deg);
-  background:#333;
-  border-radius:100px;
+.project {
+  padding: 0.7rem;
+  border: 2px solid #ececec;
   
-  width: 60px;
-  height: 12px;
-  
-  position: absolute;
-  top: 25%;
+  font-weight: 200;
 }
 
-.arrow2 {
-  transform:rotate(45deg);
-  background:#333;
-  border-radius:100px;
-  
-  width: 60px;
-  height: 12px;
-  
-  position: absolute;
-  top: 60%;
+.copyright {
+  text-align: center;
+  padding: 1rem 0;
 }
-
-
-.arrow3 {
-  transform:rotate(45deg);
-  background:#333;
-  border-radius:60px;
-  
-  width: 60px;
-  height: 12px;
-  
-  position: absolute;
-  right:0;
-  top: 25%;
-}
-
-.arrow4 {
-  transform:rotate(-45deg);
-  background:#333;
-  border-radius:60px;
-  
-  width: 60px;
-  height: 12px;
-  
-  position: absolute;
-  right:0;
-  top: 60%;
-}
-
-
 
 
 
