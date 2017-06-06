@@ -9,9 +9,6 @@ body {
   
   font-size: 100%;
   font-family: 'Roboto', 'Helvetica', sans-serif;
-  
-  display: flex;
-  flex-direction: column;
 }
 
 a {
@@ -322,12 +319,8 @@ p {
 }
 
 .content {
-  margin-top:60px;
-  width: 100vw;
-  
-  
-  display: flex;
-  justify-content: space-around;
+  padding-top:60px;
+  max-width: 100vw;
 }
 
 .wrapper {
@@ -457,7 +450,7 @@ p {
 -------*/
  
 footer {
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   
@@ -468,19 +461,38 @@ footer {
 .other-projects {
   display: flex;
   justify-content: space-around;
+  padding: 1rem 0;
 }
 
 .project {
   padding: 0.7rem;
   border: 2px solid #ececec;
   
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .copyright {
   text-align: center;
-  padding: 1rem 0;
+  font-weight: 300;
+  font-size: 0.8rem;
+  
+  padding: 3rem 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -497,6 +509,18 @@ footer {
 
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -536,16 +560,21 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:800px) {
   
   .portfolio-nav {
     font-size:0.55rem ;
-  }
-  
-  /*ARROWS*/
-  
-  .arrow_right {
-    right: 0.3rem;
   }
   
   
@@ -848,48 +877,9 @@ NAVIGATION
   
   
   
-    /*-------
-    ARROWS
-  -------*/
+ 
 
-  .arrow_left {
-    left: 0;
-  }
-
-  .arrow_right {
-    right: 0;
-  }
-
-  .arrow1 {
-    width: 30px;
-    height: 8px;
-
-    top: 25%;
-  }
-
-  .arrow2 {
-    width: 30px;
-    height: 8px;
-
-    top: 43%;
-  }
-
-
-  .arrow3 {
-    width: 30px;
-    height: 8px;
-
-    top: 25%;
-  }
-
-  .arrow4 {
-    width: 30px;
-    height: 8px;
-
-    top: 43%;
-  }
-
-    /*ATM PROJECT*/
+/*ATM PROJECT*/
 
   .content {
     margin-left: auto;
@@ -983,46 +973,6 @@ NAVIGATION
 
   @media only screen and (max-width:480px) {
 
-     /*-------
-    ARROWS
-  -------*/
-
-  .arrow_left {
-    left: 0;
-  }
-
-  .arrow_right {
-    right: 0;
-  }
-
-  .arrow1 {
-    width: 25px;
-    height: 8px;
-
-    top: 25%;
-  }
-
-  .arrow2 {
-    width: 25px;
-    height: 8px;
-
-    top: 38%;
-  }
-
-
-  .arrow3 {
-    width: 25px;
-    height: 8px;
-
-    top: 25%;
-  }
-
-  .arrow4 {
-    width: 25px;
-    height: 8px;
-
-    top: 38%;
-  }
 
 
       /*--------------
