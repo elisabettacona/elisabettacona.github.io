@@ -18,13 +18,6 @@ a {
 
 
 /*---------
-   INTRO 
----------*/
-
-
-
-
-/*---------
 NAVIGATION 
 ---------*/
 
@@ -871,13 +864,7 @@ NAVIGATION
   }
   
   
-  
-  
-  
-  
-  
-  
- 
+
 
 /*ATM PROJECT*/
 
@@ -953,6 +940,20 @@ NAVIGATION
       font-size: 0.8rem;
     }
   
+  
+  
+  /*footer*/
+
+
+  .project {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    padding: 2rem 1rem;
+  }
+  
+
   
 }
 
