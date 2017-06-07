@@ -141,19 +141,19 @@ li {
 }
 
 .area-web-design {
-  background-image: url(../IMG/ATM-prototype.png);
+  background-image: url(../IMG/atm-02.png);
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/tuesdays-responsive.png);
+  background-image: url(../IMG/tuesdays-00.png);
 }
 
 .area-photography {
-  background-image: url(../IMG/agape-02.png);
+  background-image: url(../IMG/agape02.png);
 }
 
 .area-painting {
-  background-image: url(../IMG/D&G-prototype.png);
+  background-image: url(../IMG/d_g01.png);
 }
 
 
@@ -208,6 +208,7 @@ li {
      ABOUT
 -------------*/
 
+
 p {
   margin: 0;
   padding: 0;
@@ -233,10 +234,13 @@ p {
   position: relative;
   bottom: 5rem;
   left: 4rem;
+  
+  width: 83%;
 }
 
 
 .contact-section {
+  width: 83%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -262,6 +266,7 @@ p {
 .email {
   /*transform: rotate(-90deg);*/
 }
+
 
 
 
@@ -474,6 +479,11 @@ footer {
 
 
 
+.wrapper-about {
+  margin-top: 15vh;
+}
+
+
 
 
 
@@ -547,6 +557,10 @@ footer {
   font-size: 1.5rem;
   bottom: 3.8rem;
 }
+ 
+  .presentation, .contact-section {
+    width: 100%;
+  }  
   
   
 }
@@ -618,20 +632,6 @@ footer {
 
 
 @media only screen and (max-width:640px) {
-  
-  
-  /*---------
-   INTRO 
----------*/
-
-
-.intro-name {
-  font-size: 2rem;
-}
-
-.intro-profession {
-  font-size: 1rem;
-}
   
   
   
@@ -826,25 +826,25 @@ NAVIGATION
 
   
   .area-web-design {
-  background-image: url(../IMG/ATM-prototype.png);
+  background-image: url(../IMG/atm-02.png);
   
   animation: introduction 1s ease-out 400ms;
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/tuesdays-responsive.png);
+  background-image: url(../IMG/tuesdays-00-mobile.png);
   
   animation: introduction2 1s ease-out 450ms;
 }
 
 .area-photography {
-  background-image: url(../IMG/agape-02.png);
+  background-image: url(../IMG/agape02-mobile.png);
   
   animation: introduction 1s ease-out 450ms;
 }
 
 .area-painting {
-  background-image: url(../IMG/D&G-prototype.png);
+  background-image: url(../IMG/d_g01-mobile.png);
   
   animation: introduction2 1s ease-out 400ms;
 }
@@ -863,7 +863,9 @@ NAVIGATION
     margin-bottom: 3vh;
   }
   
-  
+  .line {
+    margin-top: 0.7rem;
+  }
 
 
 /*ATM PROJECT*/
