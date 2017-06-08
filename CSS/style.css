@@ -263,10 +263,6 @@ p {
   color: #adadad;
 }
 
-.email {
-  /*transform: rotate(-90deg);*/
-}
-
 
 
 
@@ -302,11 +298,10 @@ p {
 }
 
 .internal-linking p {
+ 
   
   padding:0.1rem 0.4rem;
 }
-
-
 
 .selected-work {
   border: 1px solid #333;
@@ -323,7 +318,7 @@ p {
 
 .wrapper {
   margin: 0 auto;
-  width: 75%;
+  max-width: 1280px;
   margin-top: 4vh;
   margin-bottom:8vh;
   
@@ -477,12 +472,10 @@ footer {
   padding: 3rem 0;
 }
 
-
-
 .wrapper-about {
   margin-top: 15vh;
+  height: 65vh;
 }
-
 
 
 
@@ -905,13 +898,13 @@ NAVIGATION
 
 
   .presentation {
-    font-size: 1rem;
+    font-size: 1.5rem;
 
     padding-right: 3rem;
 
     position: relative;
-    bottom: 0;
-    left: 0;
+    bottom: 2rem;
+    left: 0.3rem;
   }
 
 
@@ -920,30 +913,14 @@ NAVIGATION
     padding-right: 3rem;
 
     position: relative;
-    left: 0;
+    left: 0.3;
   }
 
   .contact {
     padding:0.2rem 2rem 0 0;
+    font-size: 1rem;
   }
 
-
-  .presentation {
-
-    bottom: 2rem;
-    left: 0.3rem;
-  }
-
-    .contact-section {
-      left: 0.3rem;
-    }
-
-    .contact {
-      font-size: 0.8rem;
-    }
-  
-  
-  
   /*footer*/
 
 
@@ -1001,7 +978,7 @@ NAVIGATION
     }
 
     .contact {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }  
 
 
@@ -1027,20 +1004,6 @@ NAVIGATION
 
 
 @media only screen and (max-width:320px) {
-  
-  
-/*---------
-   INTRO 
----------*/
-
-
-.intro-name {
-  font-size: 1.5rem;
-}
-
-.intro-profession {
-  font-size: 1rem;
-}
   
   
   
