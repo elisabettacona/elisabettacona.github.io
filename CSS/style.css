@@ -234,13 +234,13 @@ li {
 }
 
 .internal-linking p {
- 
-  
   padding:0.1rem 0.4rem;
+  
+  border: 1px solid transparent;
 }
 
-.selected-work {
-  border: 1px solid #333;
+.internal-linking .selected-work {
+  border-color: #333;
 }
 
 .arrow-right-internal-linking {
