@@ -173,7 +173,7 @@ li {
 .background h3 {
   opacity: 0;
   
-  transform: rotateY(45deg);
+  transform: rotateX(90deg);
   transition: all 500ms;
   
   font-family: 'Sintony', sans-serif;
@@ -182,7 +182,7 @@ li {
 .background:hover h3 {
   opacity: 1;
   
-  transform: rotateY(0);
+  transform: rotateX(0);
 }
 
 .background:hover {
@@ -409,6 +409,7 @@ p {
 .contact-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content:flex-end; 
   
   padding-top: 5vh;
   
@@ -446,9 +447,11 @@ footer {
 
 .copyright {
   font-weight: 300;
-  font-size: 0.8rem;
-  
-  
+  font-size: 0.8rem; 
+}
+
+.footer-contact:hover {
+  opacity: .55;
 }
 
 
