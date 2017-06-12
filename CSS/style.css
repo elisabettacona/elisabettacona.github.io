@@ -5,8 +5,6 @@
 body {
   margin: 0;
   
-  background-color: #fff;
-  
   font-size: 100%;
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
@@ -204,68 +202,6 @@ li {
   font-size: 3rem;
 }
 
-/*--------------
-     ABOUT
--------------*/
-
-
-p {
-  margin: 0;
-  padding: 0;
-}
-
-.hello {
-  color: #ececec;
-  
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 13rem;
- 
-}
-
-
-.presentation {
-
-  font-weight: 900;
-  font-size: 1.8rem;
-  
-  padding-right: 2rem;
-  
-  position: relative;
-  bottom: 5rem;
-  left: 4rem;
-  
-  width: 83%;
-}
-
-
-.contact-section {
-  width: 83%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  
-  position: relative;
-  left: 4rem;
-  
-  line-height: 2rem;
-}
-
-.contact {
-  color: #333;
-  
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: underline;
-}
-
-.contact:hover {
-  color: #adadad;
-}
-
-
-
-
 /*---------
    WORK
 ---------*/
@@ -322,8 +258,6 @@ p {
   max-width: 1280px;
   margin-top: 4vh;
   margin-bottom:8vh;
-  
-  background-color: #fff;
 }
 
 .project-title {
@@ -439,14 +373,40 @@ p {
 }
 
 
+
+/*--------------
+     ABOUT
+-------------*/
+
+.wrapper-about {
+  margin-top: 15vh;
+  height: 60vh;
+  max-width: 800px;
+}
+
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.description-about {
+  font-size: 1.7rem;
+  
+  width: 100%;
+}
+
+
+
+
+
 /*-------
   FOOTER
 -------*/
  
 footer {
-  
-
-  
   background-color: #333;
   color: #ececec;
   
@@ -468,12 +428,6 @@ footer {
   font-size: 0.8rem;
   
   
-}
-
-
-.wrapper-about {
-  margin-top: 15vh;
-  height: 65vh;
 }
 
 
@@ -535,24 +489,6 @@ footer {
   font-size: 1rem;
 }
   
-  /*--------------
-     ABOUT
--------------*/
-
-.hello {
-  font-size: 10rem;
- 
-}
-
-
-.presentation {
-  font-size: 1.5rem;
-  bottom: 3.8rem;
-}
- 
-  .presentation, .contact-section {
-    width: 100%;
-  }  
   
   
 }
@@ -581,29 +517,9 @@ footer {
      ABOUT
 -------------*/
 
-
-.contact {
-  padding:0.2rem 2rem 0 0;
+.description-about {
+  font-size: 1.3rem;
 }
-  
-.hello {
-  font-size: 8rem;
- 
-}
- 
-  .presentation {
-    bottom: 2rem;
-    left: 0.3rem;
-  }
-  
-  .contact-section {
-    padding-right: 3rem;
-    left: 0.3rem;
-  }
-  
-  .contact {
-    font-size: 0.8rem;
-  }
   
 }
 
@@ -896,41 +812,11 @@ NAVIGATION
   -------------*/
 
 
-  .presentation {
-    font-size: 1.5rem;
-
-    padding-right: 3rem;
-
-    position: relative;
-    bottom: 2rem;
-    left: 0.3rem;
-  }
+.description-about {
+  font-size: 1rem;
+}
 
 
-  .contact-section {
-
-    padding-right: 3rem;
-
-    position: relative;
-    left: 0.3;
-  }
-
-  .contact {
-    padding:0.2rem 2rem 0 0;
-    font-size: 1rem;
-  }
-
-  /*footer*/
-
-
-  .project {
-    font-size: 0.9rem;
-  }
-
-  .copyright {
-    padding: 2rem 1rem;
-  }
-  
 
   
 }
@@ -953,34 +839,6 @@ NAVIGATION
   @media only screen and (max-width:480px) {
 
 
-
-      /*--------------
-       ABOUT
-  -------------*/
-
-
-
-  .hello {
-    font-size: 6rem;
-  }
-
-
-  .presentation {
-    padding-right: 1rem;
-    font-size: 1rem;
-
-    line-height: 0.95rem;
-  }
-
-    .contact-section {
-      padding-right: 1rem;
-    }
-
-    .contact {
-      font-size: 0.9rem;
-    }  
-
-
   /*ATM PROJECT*/
 
     .wrapper {
@@ -988,14 +846,37 @@ NAVIGATION
     margin-bottom:10vh;
   }
   
+  
+    
 }
 
 
+@media only screen and (max-width:480px) {
+
+/*-------
+  FOOTER
+-------*/
+ 
+footer {
+  padding: 1rem 0;
+}
+
+.footer-content{
+  flex-direction: column;
+}
 
 
+.copyright {
+  text-align: center;
+}
+  
+  .contact {
+    order: -1;
+    
+    padding-bottom: .5rem;
+  }  
 
-
-
+}
 
 
 
@@ -1011,32 +892,14 @@ NAVIGATION
   
   .headline {
   font-size: 1rem;
-}
+ }
   
   
-/*--------------
-     ABOUT
--------------*/
-
-
+  /*about*/
   
-.hello {
-  font-size: 5rem;
-}
-
-
-.presentation {
-  padding-top: 0.1rem;
-  padding-right: 0;
-
-}
- 
-  .contact-section {
-    padding-right: 0;
+  .wrapper-about {
+    height: 50vh;
   }
   
-  .contact {
-    padding-right: 0.5rem;
-    font-size: 0.8rem;
-  }
+  
 }
