@@ -380,6 +380,8 @@ li {
 
 
 .wrapper-about {
+  margin: 0 auto;
+  
   height: calc(100vh - 130px);
   display: flex;
   flex-direction: column;
