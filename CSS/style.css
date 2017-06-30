@@ -52,7 +52,9 @@ NAVIGATION
   margin-left: auto;
 }
 
-
+.strikeout:hover {
+  color: #696969;
+}
 
 ul {
   margin: 0;
