@@ -280,7 +280,9 @@ li {
   flex-direction: column;
 }
 
-
+.intro-video {
+    margin-top: 3rem;
+  }
 
 .description {
   line-height: 125%;
@@ -328,7 +330,9 @@ li {
   background-color: #608fd0;
 }
 
-
+.line-thebodyshop {
+  background-color: #d3b824;
+}
 
 .invision {
   color: #fc6100;
@@ -820,7 +824,6 @@ NAVIGATION
     .intro {
     padding-bottom: 3rem;
   }
-
 
 
       /*--------------
