@@ -130,7 +130,7 @@ li {
 }
 
 .area-web-design {
-  background-image: url(../IMG/atm-02.png);
+  background-image: url(../IMG/atm-02.jpg);
 }
 
 .area-graphic-design {
@@ -138,7 +138,7 @@ li {
 }
 
 .area-photography {
-  background-image: url(../IMG/agape02.png);
+  background-image: url(../IMG/agape02.jpg);
 }
 
 .area-painting {
@@ -754,25 +754,25 @@ NAVIGATION
 
   
   .area-web-design {
-  background-image: url(../IMG/atm-02.png);
+  background-image: url(../IMG/atm-02.jpg);
   
   animation: introduction 1s ease-out 400ms;
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/tuesdays-00-mobile.png);
+  background-image: url(../IMG/tuesdays-00-mobile.jpg);
   
   animation: introduction2 1s ease-out 450ms;
 }
 
 .area-photography {
-  background-image: url(../IMG/agape02-mobile.png);
+  background-image: url(../IMG/agape02-mobile.jpg);
   
   animation: introduction 1s ease-out 450ms;
 }
 
 .area-painting {
-  background-image: url(../IMG/d_g01-mobile.png);
+  background-image: url(../IMG/d_g01-mobile.jpg);
   
   animation: introduction2 1s ease-out 400ms;
 }
