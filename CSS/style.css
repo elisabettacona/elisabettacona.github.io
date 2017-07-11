@@ -754,13 +754,13 @@ NAVIGATION
 
   
   .area-web-design {
-  background-image: url(../IMG/atm-02.jpg);
+  background-image: url(../IMG/atm-02-mobile.png);
   
   animation: introduction 1s ease-out 400ms;
 }
 
 .area-graphic-design {
-  background-image: url(../IMG/tuesdays-00-mobile.jpg);
+  background-image: url(../IMG/tuesdays-00-mobile.png);
   
   animation: introduction2 1s ease-out 450ms;
 }
