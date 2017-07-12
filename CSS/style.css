@@ -139,19 +139,19 @@ li {
   background-size:cover;
 }
 
-.area-web-design {
+.area-atm-project {
   background-image: url(../IMG/atm-02.jpg);
 }
 
-.area-graphic-design {
+.area-tuesdays-magazine {
   background-image: url(../IMG/tuesdays-00.png);
 }
 
-.area-photography {
+.area-service-design {
   background-image: url(../IMG/agape02.jpg);
 }
 
-.area-painting {
+.area-dolce-gabbana {
   background-image: url(../IMG/d_g01.jpg);
 }
 
@@ -363,7 +363,8 @@ li {
 }
 
 .tuesdays-gifs img {
-  height: 70vh;
+  padding: 0 2rem 0 2rem;
+  height: 65vh;
   width: auto;
 }
 
@@ -469,11 +470,6 @@ footer {
   .description {
   width: 70%;
   }
-  
-  
-  .tuesdays-gifs {
-  flex-direction: column;
-}
 
   
 }
@@ -516,6 +512,11 @@ footer {
   
   font-size: 1rem;
 }
+ 
+  
+    .tuesdays-gifs {
+  flex-direction: column;
+}  
   
 /*--------------
      ABOUT
@@ -545,6 +546,7 @@ footer {
   .portfolio-nav {
     font-size:0.55rem ;
   }
+  
   
   
 /*--------------
@@ -779,25 +781,25 @@ NAVIGATION
 }
   
   
-  .area-web-design {
+  .area-atm-project {
   background-image: url(../IMG/atm-02-mobile.png);
   
   animation: introduction 1s ease-out 400ms;
 }
 
-.area-graphic-design {
+.area-tuesdays-magazine {
   background-image: url(../IMG/tuesdays-00-mobile.png);
   
   animation: introduction2 1s ease-out 450ms;
 }
 
-.area-photography {
+.area-service-design {
   background-image: url(../IMG/agape02-mobile.jpg);
   
   animation: introduction 1s ease-out 450ms;
 }
 
-.area-painting {
+.area-dolce-gabbana {
   background-image: url(../IMG/d_g01-mobile.jpg);
   
   animation: introduction2 1s ease-out 400ms;
