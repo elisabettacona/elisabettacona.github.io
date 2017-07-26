@@ -147,8 +147,8 @@ li {
   background-image: url(../IMG/tuesdays-00.png);
 }
 
-.area-service-design {
-  background-image: url(../IMG/agape02.jpg);
+.area-oakley {
+  background-image: url(../IMG/0oakley_index.png);
 }
 
 .area-armani {
@@ -315,7 +315,7 @@ li {
   width: 30px;
   height: 5px;
   
-  background-color: brown;
+  background-color: red;
   margin-top: 0.5rem;
 }
 
@@ -799,8 +799,8 @@ NAVIGATION
   animation: introduction2 1s ease-out 450ms;
 }
 
-.area-service-design {
-  background-image: url(../IMG/agape02-mobile.jpg);
+.area-oakley {
+  background-image: url(../IMG/0oakley_index-mobile.png);
   
   animation: introduction 1s ease-out 450ms;
 }
