@@ -151,8 +151,8 @@ li {
   background-image: url(../IMG/agape02.jpg);
 }
 
-.area-dolce-gabbana {
-  background-image: url(../IMG/d_g01.jpg);
+.area-armani {
+  background-image: url(../IMG/0armani_made-to-order_index.png);
 }
 
 
@@ -326,8 +326,8 @@ li {
 .line-atm {
   background-color: #fc6100;
 }
-.line-dg {
-  background-color: #acacac;
+.line-armani {
+  background-color: #d1c39a;
 }
 .line-mag {
   background-color: #e6cadd;
@@ -345,6 +345,12 @@ li {
 
 .invision {
   color: #fc6100;
+  text-decoration: underline;
+}
+
+.invision-armani {
+  color: #baa159;
+  text-decoration: underline;
 }
 
 .screens {
@@ -799,8 +805,8 @@ NAVIGATION
   animation: introduction 1s ease-out 450ms;
 }
 
-.area-dolce-gabbana {
-  background-image: url(../IMG/d_g01-mobile.jpg);
+.area-armani {
+  background-image: url(../IMG/0armani_made-to-order_mobile.png);
   
   animation: introduction2 1s ease-out 400ms;
 }
