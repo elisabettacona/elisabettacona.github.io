@@ -1,5 +1,5 @@
 ﻿.ax_default {
-  font-family:'ArialMT', 'Arial';
+  font-family:'ArialMT', 'Arial', sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -20,51 +20,59 @@
 }
 .box_3 {
 }
+.ellipse {
+}
 .placeholder {
 }
+.button {
+}
 .heading_1 {
-  font-family:'Sintony';
+  font-family:'Sintony', sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:32px;
   text-align:left;
 }
 .heading_2 {
-  font-family:'Sintony';
+  font-family:'Sintony', sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:24px;
   text-align:left;
 }
 .heading_3 {
-  font-family:'Sintony';
+  font-family:'Sintony', sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:18px;
   text-align:left;
 }
 .heading_4 {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:14px;
   text-align:left;
 }
 .heading_5 {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:bold;
   font-style:normal;
   text-align:left;
 }
 .heading_6 {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:10px;
   text-align:left;
 }
+.label {
+  font-size:14px;
+  text-align:left;
+}
 .paragraph {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:400;
   font-style:normal;
   text-align:left;
@@ -77,19 +85,27 @@
 .text_link_mouse_down {
 }
 .form_hint {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:400;
   font-style:normal;
   color:#999999;
 }
 .form_disabled {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
   font-weight:400;
   font-style:normal;
 }
 .flow_shape {
 }
 .line {
+}
+.text_field {
+  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  color:#000000;
+  text-align:left;
 }
 .connector {
 }
