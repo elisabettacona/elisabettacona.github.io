@@ -983,7 +983,7 @@
   left:0px;
   top:0px;
   width:741px;
-  height:361px;
+  height:402px;
   background-image:none;
   border:none;
   border-radius:0px;
@@ -1176,7 +1176,7 @@
   border-width:0px;
   position:absolute;
   left:421px;
-  top:319px;
+  top:360px;
   width:300px;
   height:42px;
   display:flex;
@@ -1281,7 +1281,7 @@
   border-width:0px;
   position:absolute;
   left:656px;
-  top:321px;
+  top:362px;
   width:63px;
   height:37px;
   display:flex;
@@ -1325,7 +1325,7 @@
   left:0px;
   top:0px;
   width:340px;
-  height:21px;
+  height:95px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1336,6 +1336,7 @@
   font-family:'Roboto-Light', 'Roboto Light', 'Roboto', sans-serif;
   font-weight:200;
   font-style:normal;
+  font-size:16px;
   text-align:center;
 }
 #u148 {
@@ -1344,11 +1345,12 @@
   left:401px;
   top:237px;
   width:340px;
-  height:21px;
+  height:95px;
   display:flex;
   font-family:'Roboto-Light', 'Roboto Light', 'Roboto', sans-serif;
   font-weight:200;
   font-style:normal;
+  font-size:16px;
   text-align:center;
 }
 #u148 .text {
@@ -3196,6 +3198,7 @@ body.a {  background-color:rgba(242, 242, 242, 1);
   left:103px;
   top:242px;
   width:394px;
+  height:76px;
 }
 #u148_div.a {
   border-width:0px;
@@ -3203,7 +3206,7 @@ body.a {  background-color:rgba(242, 242, 242, 1);
   left:0px;
   top:0px;
   width:394px;
-  height:21px;
+  height:76px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -3214,12 +3217,14 @@ body.a {  background-color:rgba(242, 242, 242, 1);
   font-family:'Roboto-Light', 'Roboto Light', 'Roboto', sans-serif;
   font-weight:200;
   font-style:normal;
+  font-size:16px;
   text-align:center;
 }
 #u148.a {
   left:103px;
   top:242px;
   width:394px;
+  height:76px;
 }
 #u148_text.a {
 }
@@ -4896,7 +4901,6 @@ body.b {  background-color:rgba(242, 242, 242, 1);
   left:31px;
   top:170px;
   width:299px;
-  height:95px;
 }
 #u148_div.b {
   border-width:0px;
@@ -4915,13 +4919,13 @@ body.b {  background-color:rgba(242, 242, 242, 1);
   font-family:'Roboto-Light', 'Roboto Light', 'Roboto', sans-serif;
   font-weight:200;
   font-style:normal;
+  font-size:16px;
   text-align:center;
 }
 #u148.b {
   left:31px;
   top:170px;
   width:299px;
-  height:95px;
 }
 #u148_text.b {
 }
