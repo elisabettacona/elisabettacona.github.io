@@ -249,10 +249,14 @@ ul.sitemapTree {
     top: 36px;
 }
 
-#interfaceScaleListContainer {
-    padding: 7.5px 9px 12px 16px;
+.vpZoomValue + #interfaceScaleListContainer {
+    padding-top: 7.5px;
     margin-top: 9px;
     border-top: solid 1px #bdbcbc;
+}
+
+#interfaceScaleListContainer {
+    padding: 0 9px 12px 16px;
     order: 10;
 }
 
@@ -260,6 +264,10 @@ ul.sitemapTree {
     padding: 3px 0px 3px 0px;
     color: #3B3B3B;
     display: flex;
+}
+
+.vpScaleOption[hidden] {
+    display: none !important;
 }
 
 .projectOptionsScaleRow, .projectOptionsAdaptiveViewRow, .projectOptionsHotspotsRow {

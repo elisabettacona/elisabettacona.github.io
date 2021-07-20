@@ -26,6 +26,9 @@
 }
 .button {
 }
+.link_button {
+  color:#1E98D7;
+}
 .heading_1 {
   font-family:'Sintony', sans-serif;
   font-weight:bold;
@@ -98,6 +101,8 @@
 .flow_shape {
 }
 .line {
+}
+.arrow {
 }
 .text_field {
   font-family:'Roboto-Regular', 'Roboto', sans-serif;

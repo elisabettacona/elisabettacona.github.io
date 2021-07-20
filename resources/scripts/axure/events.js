@@ -593,14 +593,21 @@ $axure.internal(function ($ax) {
     };
 
     var _attachDefaultObjectEvent = function(elementIdQuery, elementId, eventName, fn) {
-        var func = function() {
-            if(!$ax.style.IsWidgetDisabled(elementId)) return fn.apply(this, arguments);
-            return true;
+        var func = function(e) {
+            if($ax.style.IsWidgetDisabled(elementId) || _shouldIgnoreLabelClickFromCheckboxOrRadioButton(e)) return true;
+            return fn.apply(this, arguments);
         };
-
         var bind = !elementIdQuery[eventName];
         if(bind) elementIdQuery.bind(eventName, func);
         else elementIdQuery[eventName](func);
+    };
+
+    var _shouldIgnoreLabelClickFromCheckboxOrRadioButton = function(e) {
+        return (((_hasParentWithMatchingSelector(e.target, '.checkbox') && $(e.target).closest('label').length != 0) ||
+            _hasParentWithMatchingSelector(e.target, '.radio_button') && $(e.target).closest('label').length != 0)) && e.type == 'click';
+    };
+    var _hasParentWithMatchingSelector = function(target, selector) {
+        return $(target).parents(selector).length != 0;
     };
 
     var _attachCustomObjectEvent = function(elementId, eventName, fn) {
@@ -718,6 +725,8 @@ $axure.internal(function ($ax) {
             var $element = $jobj(elementId);
             var itemId = $ax.repeater.getItemIdFromElementId(elementId);
 
+            const isItem = itemId && $ax.public.fn.IsRepeater(dObj.type);
+
             // Focus has to be done before on focus fires
             // Set up focus
             if ($ax.public.fn.IsTextArea(dObj.type) || $ax.public.fn.IsTextBox(dObj.type) || $ax.public.fn.IsCheckBox(dObj.type) || $ax.public.fn.IsRadioButton(dObj.type) ||
@@ -752,31 +761,35 @@ $axure.internal(function ($ax) {
             _attachIxStyleEvents(dObj, elementId, $element);
 
             var $axElement = $ax('#' + elementId);
-            // Base case is set up selected disabled based on the default in the axobj, for non, repeaters and resetting repeaters
+            // Base case is set up selected disabled error based on the default in the axobj, for non, repeaters and resetting repeaters
             var itemReset = refreshType == $ax.repeater.refreshType.reset;
             if(!itemId || itemReset) {
-                //initialize disabled elements, do this first before selected, cause if a widget is disabled, we don't want to apply selected style anymore
+                //initialize selected and error before disabled or else style state dictionaries will be incorrect
                 if ($ax.public.fn.IsVector(dObj.type) || $ax.public.fn.IsImageBox(dObj.type) || isDynamicPanel || $ax.public.fn.IsLayer(dObj.type)
                     || $ax.public.fn.IsTextBox(dObj.type) || $ax.public.fn.IsTextArea(dObj.type) || $ax.public.fn.IsComboBox(dObj.type) || $ax.public.fn.IsListBox(dObj.type)
                     || $ax.public.fn.IsCheckBox(dObj.type) || $ax.public.fn.IsRadioButton(dObj.type)) {
 
-                    if (dObj.disabled) $axElement.enabled(false);
-
                     // Initialize selected elements
                     // only set one member of selection group selected since subsequent calls
                     // will unselect the previous one anyway
+                    if(dObj.error) $axElement.error(true);
+
                     if(dObj.selected && !skipSelectedIds.has(elementId)) {
                         var group = $('#' + elementId).attr('selectiongroup');
                         if(group) for(var item of $("[selectiongroup='" + group + "']")) skipSelectedIds.add(item.id);
                         $axElement.selected(true);
                     }
+
+                    if (dObj.disabled) $axElement.enabled(false);
                 }
             } else if(refreshType == $ax.repeater.refreshType.preEval) {
-                // Otherwise everything should be set up correctly by pre-eval, want to set up selected disabled dictionaries (and disabled status)
-                // Disabled layer/dynamic panel don't have the disabled class, but they do have the disabled attr written out, so use that in that case
-                if ($element.hasClass('disabled') ||
-                    (($ax.IsLayer(dObj.type) || $ax.IsDynamicPanel(dObj.type)) && $element.attr('disabled'))) $axElement.enabled(false);
-                if($element.hasClass('selected')) $axElement.selected(true);
+                // Otherwise everything should be set up correctly by pre-eval, want to set up selected/disabled/error dictionaries (and disabled status)
+                const isSelected = $element.hasClass('selected');
+                const isError = $element.hasClass('error');
+                const isDisabled = $element.hasClass('disabled');
+                if(isSelected) $axElement.selected(true);
+                if(isError) $axElement.error(true);
+                if(isDisabled) $axElement.enabled(false);
             } else {
                 // Persist means we want to leave it as is, but we want to make sure we use selected based off of the backing data, and not some class that exists because of the reset
                 $element.removeClass('selected');
@@ -788,12 +801,20 @@ $axure.internal(function ($ax) {
             //    }
             //};
 
+            const isInput = $ax.public.fn.IsTextArea(dObj.type) || $ax.public.fn.IsTextBox(dObj.type);
+            if(isInput) {
+                var inputJobj = $jobj($ax.INPUT(elementId));
+                inputJobj.bind('keyup', function(e) {
+                    //prevents triggering player shortcuts
+                    e.preventDefault();
+                });
+            }
+
             // Initialize Placeholders. Right now this is text boxes and text areas.
             // Also, the assuption is being made that these widgets with the placeholder, have no other styles (this may change...)
             var hasPlaceholder = dObj.placeholderText == '' ? true : Boolean(dObj.placeholderText);
-            if(($ax.public.fn.IsTextArea(dObj.type) || $ax.public.fn.IsTextBox(dObj.type)) && hasPlaceholder) {
+            if(isInput && hasPlaceholder) {
                 // This is needed to initialize the placeholder state
-                var inputJobj = $jobj($ax.INPUT(elementId));
                 inputJobj.bind('focus', function () {
                     if(dObj.HideHintOnFocused) {
                         var id = this.id;
@@ -845,7 +866,7 @@ $axure.internal(function ($ax) {
                             if(!$ax.placeholderManager.isActive(inputId)) return;
                             $ax.placeholderManager.updatePlaceholder(inputId, false, true);
                         }
-                    }).bind('keyup', function(e) {
+                    }).bind('keyup', function() {
                         var id = this.id;
                         var inputIndex = id.indexOf('_input');
                         if(inputIndex == -1) return;
@@ -856,9 +877,6 @@ $axure.internal(function ($ax) {
                             $ax.placeholderManager.updatePlaceholder(inputId, true);
                             $ax.placeholderManager.moveCaret(id, 0);
                         }
-
-                        //prevents triggering player shortcuts
-                        e.preventDefault();
                     });
                 }
 
@@ -949,7 +967,7 @@ $axure.internal(function ($ax) {
             }
 
             // Attach handles for dynamic panels that propagate styles to inner items.
-            if ((isDynamicPanel || $ax.public.fn.IsLayer(dObj.type)) && dObj.propagate) {
+            if ((isDynamicPanel || $ax.public.fn.IsLayer(dObj.type) || isItem) && dObj.propagate) {
                 $element.mouseenter(function() {
                     dynamicPanelMouseOver(this.id);
                 }).mouseleave(function() {
@@ -1149,7 +1167,7 @@ $axure.internal(function ($ax) {
                     if(input.prop('selected')) {
                         $ax.updateRadioButtonSelected(radioGroupName, elementId);
                     }
-                    var onClick = function() {
+                    var onClick = function(e) {
                         if(radioGroupName !== elementId) {
                             var radioGroup = $("input[name='" + radioGroupName + "']").parent();
                             for(var i = 0; i < radioGroup.length; i++) {
@@ -1157,11 +1175,14 @@ $axure.internal(function ($ax) {
                             }
                         }
                         $ax.style.SetWidgetSelected(elementId, true, true);
+                        if(!$ax.style.IsWidgetDisabled(elementId)) e.originalEvent.handled = true;
                     };
                 } else {
-                    onClick = function () {
+                    onClick = function(e) {
                         $ax.style.SetWidgetSelected(elementId, !$ax.style.IsWidgetSelected(elementId), true);
-                    };                                        
+                        if(!$ax.style.IsWidgetDisabled(elementId)) e.originalEvent.handled = true;
+                    };
+                  
                 }
                 input.click(onClick);
 
@@ -1558,7 +1579,8 @@ $axure.internal(function ($ax) {
         if(!e) return;
 
         if(IE_10_AND_BELOW && typeof (e.type) == 'unknown') return;
-        if(e.type != 'mousemove' && e.type != 'touchstart' && e.type != 'touchmove' && e.type != 'touchend') return;
+        if(e.type != 'mousemove' && e.type != 'touchstart' && e.type != 'touchmove' && e.type != 'touchend'
+            && e.type != 'pointermove' && e.type != 'pointerdown' && e.type != 'pointerup') return;
 
         var newX;
         var newY;
@@ -1606,6 +1628,12 @@ $axure.internal(function ($ax) {
         else $ax.event.raiseSyntheticEvent(elementId, 'onUnselect');
     };
     $ax.event.raiseSelectedEvents = _raiseSelectedEvents;
+
+    var _raiseErrorEvents = function(elementId, value) {
+        if(value) $ax.event.raiseSyntheticEvent(elementId, 'onErrorSet');
+        else $ax.event.raiseSyntheticEvent(elementId, 'onErrorRemoved');
+    }
+    $ax.event.raiseErrorEvents = _raiseErrorEvents;
 
     var _raiseSyntheticEvent = function(elementId, eventName, skipShowDescription, eventInfo, nonSynthetic) {
         // Empty string used when this is an event directly on the page.
@@ -1935,10 +1963,10 @@ $axure.internal(function ($ax) {
             PAGE_AXURE_TO_JQUERY_EVENT_NAMES.onMouseMove = ['html', 'mousemove'];
         } else {
             _event.initMobileEvents($win, $win, '');
-
-            $win.bind($ax.features.eventNames.mouseDownName, _updateMouseLocation);
-            $win.bind($ax.features.eventNames.mouseUpName, function(e) { _updateMouseLocation(e, true); });
         }
+
+        $win.bind($ax.features.eventNames.mouseDownName, _updateMouseLocation);
+        $win.bind($ax.features.eventNames.mouseUpName, function(e) { _updateMouseLocation(e, true); });
         
         $win.scroll(function () { _setCanClick(false); });
         $win.bind($ax.features.eventNames.mouseDownName, function () { _setCanClick(true); });
@@ -1958,6 +1986,7 @@ $axure.internal(function ($ax) {
                 if ((SAFARI && IOS) || SHARE_APP) jObj = '#ios-safari-html';
 
                 $(jObj)[actionName](function (e) {
+                    if(_shouldIgnoreLabelClickFromCheckboxOrRadioButton(e)) return;
                     $ax.setjBrowserEvent(e);
                     return fireEventThroughContainers(axureName, undefined, false, [$ax.constants.PAGE_TYPE, $ax.constants.REFERENCE_DIAGRAM_OBJECT_TYPE, $ax.constants.DYNAMIC_PANEL_TYPE, $ax.constants.REPEATER],
                         [$ax.constants.PAGE_TYPE, $ax.constants.REFERENCE_DIAGRAM_OBJECT_TYPE]);

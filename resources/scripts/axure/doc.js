@@ -405,6 +405,30 @@
             widget.rotation = function () { return this.getProp('rotation'); }
             widget.text = function () { return this.getProp('text'); }
 
+            //height and width change aren't cached as they're only valid during an event
+            widget.heightchange = function () {
+
+                //if this is during a set state
+                var panelSizeChange = $ax.dynamicPanelManager.getPanelSizeChange(elementId);
+                if ($ax.public.fn.IsDynamicPanel(obj.type) && panelSizeChange) {
+                    return panelSizeChange.height;
+                }
+
+                var oldHeight = $ax.visibility.getResizingRect(this.elementId).height;
+                return oldHeight ? this.height() - oldHeight : 0;
+
+            }
+
+            widget.widthchange = function () {
+                //if this is during a set state
+                var panelSizeChange = $ax.dynamicPanelManager.getPanelSizeChange(elementId);
+                if ($ax.public.fn.IsDynamicPanel(obj.type) && panelSizeChange) {
+                    return panelSizeChange.width;
+                }
+                var oldWidth = $ax.visibility.getResizingRect(this.elementId).width;
+                return oldWidth ? this.width() - oldWidth : 0;
+            }    
+            
             widget.getProp = function (prop) {
                 var propName = prop + 'Prop';
                 if (typeof (this[propName]) != 'undefined') return this[propName];

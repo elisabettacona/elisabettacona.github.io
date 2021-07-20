@@ -3,6 +3,36 @@ html, body {
     height: 100%;
 }
 
+#zoomOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#dragOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+#dragOverlay.dragging__start {
+    cursor: grabbing;
+}
+
+html.hideScroll::-webkit-scrollbar {
+    display: none;
+}
+
+html.hideScroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .mobileFrameCursor div * {
     cursor: inherit !important;
 }

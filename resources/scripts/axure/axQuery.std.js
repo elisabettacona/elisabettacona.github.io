@@ -73,7 +73,15 @@ $axure.internal(function($ax) {
     $ax.public.fn.IsSelectionButton = function(type) {
         return type == $ax.constants.RADIO_BUTTON_TYPE || type == $ax.constants.CHECK_BOX_TYPE;
     };
-    
+
+    $ax.public.fn.SupportsErrorStyle = function(widgetType) {
+        return $ax.public.fn.IsImageBox(widgetType) || $ax.public.fn.IsVector(widgetType)
+            || $ax.public.fn.IsDynamicPanel(widgetType) || $ax.public.fn.IsLayer(widgetType)
+            || $ax.public.fn.IsTextArea(widgetType) || $ax.public.fn.IsTextBox(widgetType)
+            || $ax.public.fn.IsListBox(widgetType) || $ax.public.fn.IsComboBox(widgetType)
+            || $ax.public.fn.IsCheckBox(widgetType) || $ax.public.fn.IsRadioButton(widgetType)
+    }
+
     $ax.public.fn.SupportsRichText = function() {
         var obj = $obj(this.getElementIds()[0]);
         // Catch root tree nodes as they are not supported.
@@ -149,28 +157,40 @@ $axure.internal(function($ax) {
         return this;
     };
 
-    $ax.public.fn.SetPanelState = function(stateNumber, options, showWhenSet) {
+    $ax.public.fn.SetPanelState = function (stateNumber, options, eventInfo, showWhenSet) {
 
         var animateInInfo = _getAnimateInfo(options && options.animateIn, 500);
         var animateOutInfo = _getAnimateInfo(options && options.animateOut, 500);
 
         var elementIds = this.getElementIds();
 
-        for(var index = 0; index < elementIds.length; index++) {
+        for (var index = 0; index < elementIds.length; index++) {
             var elementId = elementIds[index];
             if ($ax.public.fn.IsDynamicPanel($ax.getTypeFromElementId(elementId))) {
-                var stateName = $ax.visibility.GetPanelStateId(elementId, Number(stateNumber) - 1);
+                var currentStateName = $ax.visibility.GetPanelState(elementId);
+                var newStateName = $ax.visibility.GetPanelStateId(elementId, Number(stateNumber) - 1);
                 var wasVisible = $ax.visibility.IsIdVisible(elementId);
+
+                $ax.dynamicPanelManager.setPanelSizeChange(elementId, $ax.dynamicPanelManager.getPanelStateSizeDelta(currentStateName, newStateName));
+
+
+                var delta = NaN;
+                if (options.compress && options.compressDistanceType == "custom") {
+                    delta = Number($ax.expr.evaluateExpr(options.compressValue, eventInfo));
+                }
+
                 // If compressing because you are fit to content and the change of state may change size, must be before the change.
                 if(options.compress && $ax.dynamicPanelManager.isIdFitToContent(elementId) && wasVisible) {
-                    $ax.dynamicPanelManager.compressDelta(elementId, $ax.visibility.GetPanelState(elementId), stateName, options.vertical, options.compressEasing, options.compressDuration);
+                    $ax.dynamicPanelManager.compressDelta(elementId, currentStateName, newStateName, options.vertical, options.compressEasing, options.compressDuration, delta);
                 }
-                $ax.visibility.SetPanelState(elementId, stateName, animateOutInfo.easingType, animateOutInfo.direction, animateOutInfo.duration,
+                $ax.visibility.SetPanelState(elementId, newStateName, animateOutInfo.easingType, animateOutInfo.direction, animateOutInfo.duration,
                     animateInInfo.easingType, animateInInfo.direction, animateInInfo.duration, showWhenSet);
                 // If compressing because of a show, must be after state is set.
                 if(options.compress && !wasVisible && showWhenSet) {
-                    $ax.dynamicPanelManager.compressToggle(elementId, options.vertical, true, options.compressEasing, options.compressDuration);
+                    $ax.dynamicPanelManager.compressToggle(elementId, options.vertical, true, options.compressEasing, options.compressDuration, delta);
                 }
+
+                $ax.dynamicPanelManager.clearPanelSizeChanges();
             }
         }
 
@@ -341,12 +361,16 @@ $axure.internal(function($ax) {
         return this;
     };
 
+    var _shouldCompress = function (showType) {
+        return showType == 'compressVertical' || showType == 'compressRight'
+    }
+
     var _setVisibility = function (elementId, value, options, useHide) {
         var animateInfo = _getAnimateInfo(options, 0, useHide);
 
         var wasShown = $ax.visibility.IsIdVisible(elementId);
-        var compress = options && options.showType == 'compress' && wasShown != value;
-        if (compress) $ax.dynamicPanelManager.compressToggle(elementId, options.vertical, value, options.compressEasing, options.compressDuration);
+        var compress = options && _shouldCompress(options.showType) && wasShown != value;
+        if (compress) $ax.dynamicPanelManager.compressToggle(elementId, options.vertical, value, options.compressEasing, options.compressDuration, options.compressDelta ?? NaN);
 
         var onComplete = function () {
             $ax.dynamicPanelManager.fitParentPanel(elementId);
@@ -491,6 +515,8 @@ $axure.internal(function($ax) {
 
         for(var index = 0; index < elementIds.length; index++) {
             var elementId = elementIds[index];
+            var oldBoundingRect = $ax('#' + elementId).offsetBoundingRect(true);
+            $ax.visibility.setResizingRect(elementId, oldBoundingRect);
 
             var obj = $obj(elementId);
             if(!$ax.public.fn.IsResizable(obj.type)) {
@@ -526,6 +552,7 @@ $axure.internal(function($ax) {
 
                     completeAndFire(moves, elementId);
                     $ax.event.raiseSyntheticEvent(elementId, 'onResize');
+                    $ax.visibility.clearResizingRects();
                 };
 
             } else {
@@ -565,6 +592,7 @@ $axure.internal(function($ax) {
 
                     $ax.annotation.adjustIconLocation(elementId);
                     $ax.event.raiseSyntheticEvent(elementId, 'onResize');
+                    $ax.visibility.clearResizingRects();
                 };
             }
 
@@ -1012,7 +1040,7 @@ $axure.internal(function($ax) {
                 if(input.length) jobj = input;
 
                 //if (OS_MAC && WEBKIT && $ax.public.fn.IsComboBox(widgetType)) jobj.css('color', enabled ? '' : 'grayText');
-
+                if($ax.public.fn.IsCheckBox(widgetType) || $ax.public.fn.IsRadioButton(widgetType)) return this;
                 if(enabled) jobj.prop('disabled', false);
                 else jobj.prop('disabled', true);
             }
@@ -1026,6 +1054,42 @@ $axure.internal(function($ax) {
         for(var index = 0; index < ids.length; index++) $ax.visibility.SetIdVisible(ids[index], arguments[0]);
         return this;
     };
+
+    $ax.public.fn.error = function () {
+        if(arguments[0] == undefined) {
+            var firstId = this.getElementIds()[0];
+            if(!firstId) return undefined;
+            //check for error
+            var widgetType = $ax.getTypeFromElementId(firstId);
+            if($ax.public.fn.SupportsErrorStyle(widgetType)) {
+                return $ax.style.IsWidgetError(firstId);
+            }
+        } else {
+            var elementIds = this.getElementIds();
+
+            for(var index = 0; index < elementIds.length; index++) {
+                var elementId = elementIds[index];
+                var widgetType = $ax.getTypeFromElementId(elementId);
+
+                var error = arguments[0];
+                if($ax.public.fn.IsImageBox(widgetType) || $ax.public.fn.IsVector(widgetType)
+                    || $ax.public.fn.IsTextBox(widgetType) || $ax.public.fn.IsTextArea(widgetType)
+                    || $ax.public.fn.IsComboBox(widgetType) || $ax.public.fn.IsListBox(widgetType)
+                    || $ax.public.fn.IsCheckBox(widgetType) || $ax.public.fn.IsRadioButton(widgetType)
+                ) $ax.style.SetWidgetError(elementId, error);
+
+                if($ax.public.fn.IsDynamicPanel(widgetType) || $ax.public.fn.IsLayer(widgetType)) {
+                    $ax.style.SetWidgetError(elementId, error);
+                    var children = this.getChildren(false, true)[index].children;
+                    for(var i = 0; i < children.length; i++) {
+                        $axure('#' + children[i]).error(error);
+                    }
+                }
+            }
+            return this;
+        }
+    }
+
 
     $ax.public.fn.selected = function() {
         if(arguments[0] == undefined) {

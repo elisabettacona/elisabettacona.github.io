@@ -354,47 +354,6 @@ input[type=text]::-ms-clear {
     background-color: inherit;
 }*/
 
-#handoffControlFrameHeaderContainer {
-    display: none;
-}
-
-#handoffControlFrameHeader li {
-    float: left;
-    display: block;
-    width: 44px;
-    height: 36px;
-    margin: 0px 3.5px 0px 3.5px;
-    padding: 4px 6px 4px 6px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-#handoffControlFrameHeader li.selected {
-    padding: 0px;
-    border-bottom: 2px solid #008dcb;
-}
-
-#handoffControlFrameHeader li a {
-    float: left;
-    height: 100%;
-    width: 32px;
-    display: block;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-.hashover #handoffControlFrameHeader li a:hover {
-    border-radius: 3px;
-    background-color: #e6e6e6;
-}
-
-#handoffControlFrameHeader li a.selected {
-    width: 100%;
-    /*background-color: inherit;*/
-}
-
 #publishContainer {
     display: none;
     margin: 6px 20.5px 5px;
@@ -403,7 +362,6 @@ input[type=text]::-ms-clear {
     border-radius: 10px;
     background-color: #008dcb;
 }
-
 
 #publishContainer.preview {
     display: block;
@@ -453,10 +411,31 @@ input[type=text]::-ms-clear {
     right: 80px;
     width: 171px;
     border-radius: 2px;
+    padding-bottom: 9px;
 }
 
 #overflowMenuContainer.popup {
     display: flex;
+}
+
+#scaleMenuContainer {
+    display: none;
+    flex-direction: column;
+    top: 36px;
+    right: 200px;
+    width: 140px;
+    border-radius: 2px;
+    padding-top: 9px;
+}
+
+.vpZoomValue {
+    padding: 3px 9px 3px 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.vpZoomValue:hover {
+    background-color: #e6e6e6;
 }
 
 .showOption {
@@ -468,78 +447,6 @@ input[type=text]::-ms-clear {
 .showOption:hover {
 	cursor: pointer;
 }
-
-#signInButton {
-    padding: 0px 20px 0px 20px;
-    width: 50.8px;
-    height: 16px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 22px;
-}
-
-#accountLoginContainer {
-    display: none;
-    right: 220px;
-}
-
-.accountOption {
-    font-size: 12px;
-    padding: 7px;
-    line-height: 1.83;
-}
-
-/* temporary sign in css (borrowed from feedback9.css*/
-.feedbackGreenBtn_Player {
-    background-color: #74BC68;
-    border-radius: 2.5px;
-    box-shadow: inset 0 -1px 0 0 rgba(137, 137, 137, 0.58);
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 12px;
-    height: 25px;
-    line-height: 25px;
-}
-
-    .feedbackGreenBtn_Player:hover {
-        background-color: #58964E;
-    }
-/* Axure Commenter Login w/out pin */
-.axureLoginBubble_Player {
-    background-color: #F2F2F2 !important;
-}
-
-.axureLoginBubbleContainer_Player {
-    padding: 5px;
-}
-
-    .axureLoginBubbleContainer_Player input {
-        width: 100%;
-        padding: 0 5px;
-        margin-bottom: 10px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .axureLoginBubbleContainer_Player span {
-        margin: 0;
-    }
-
-div.axClearMsgBubble_Player {
-    padding: 10px;
-    max-width: 300px;
-    text-align: center;
-}
-
-    div.axClearMsgBubble_Player span {
-        margin: 2px;
-        white-space: pre-wrap;
-        white-space: -moz-pre-wrap; /* Firefox */
-        white-space: -pre-wrap; /* Opera <7 */
-        white-space: -o-pre-wrap; /* Opera 7 */
-        word-wrap: break-word; /* IE */
-    }
-
 
 #publishButton {
     display: block;
@@ -643,9 +550,9 @@ div.axClearMsgBubble_Player {
 
 .separator {
     display: block;
-    width: 0px;
+    width: 1px;
     height: 100%;
-    border: solid 0.5px #c4c4c4;
+    background-color: #c4c4c4;
 }
 
 #interfacePageNameContainer {
@@ -776,7 +683,7 @@ div.axClearMsgBubble_Player {
 }
 
 #interfaceControlFrameLogoContainer {
-    overflow: hidden;
+    overflow: hidden;    
     margin-left: auto;
     margin-right: auto;
     height: 100%;
@@ -799,6 +706,28 @@ div.axClearMsgBubble_Player {
     font-size: 14px;
     line-height: 36px;
     display: none;
+}
+
+#scaleMenuButton {
+    display: flex;
+    align-items: center;    
+    margin: 4px 0;
+    padding: 0 6px;
+}
+
+#scaleMenuButton:hover {
+    border-radius: 3px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+#scaleValue {
+    font-weight: bold;
+    color: #6d6d6d;
+}
+
+#expandScaleArrow {    
+    margin-left: 6px;
 }
 
 #logoImage {
@@ -986,6 +915,21 @@ div.mobileText, span.mobileText {
     left: -60px;
 }
 
+.closeButtonContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.closeButtonContainer button {
+    font-size: 12px;
+    padding: 5px 10px;
+    color: #6D6D6D;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+}
+
 /*@media (max-width: 419px) {*/
     .mobileMode #topPanel {
         display: none;
@@ -1042,6 +986,10 @@ div.mobileText, span.mobileText {
     #interfaceAdaptiveViewsContainer {
         padding-left: 8px;
     }
+
+    #scaleMenuContainer {
+        right: 120px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -1049,4 +997,3 @@ div.mobileText, span.mobileText {
         display: none;
     }
 }
-

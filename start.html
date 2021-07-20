@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="">
 <head>
     <title>Untitled Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
     <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
-    <link rel="shortcut icon" href="resources/images/favicon_play.ico" />
+    <link rel='icon' type='image/svg+xml' href='resources/images/favicon_play.svg' />
+    <link rel='alternate icon' href='resources/images/favicon_play.ico' />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet'>
 
     <script type="text/javascript">
@@ -76,6 +77,11 @@
                 <div id="publishContainer">
                     <a id="publishButton">Share Prototype</a>
                 </div>
+
+                <div id="scaleMenuButton" title="Zoom and Scale">
+                    <div id="scaleValue">100%</div>
+                    <div id="expandScaleArrow" class="caret"></div>
+                </div>
                 
                 <div id="inspectControlFrameHeaderContainer">
                     <ul id="inspectControlFrameHeader">
@@ -102,10 +108,10 @@
         <div id='interfaceScaleListContainer'>
         </div>
 
-        <div id='accountLoginContainer'>
+        <div id='overflowMenuContainer'>
         </div>
 
-        <div id='overflowMenuContainer'>
+        <div id='scaleMenuContainer'>
         </div>
     </div>
     <div id="outerContainer">
@@ -138,7 +144,7 @@
 
     <div id="mobileControlFrameContainer"></div>
 
-<!-- 9.0.0.3719 -->
+<!-- 10.0.0.3834 -->
 <script src="resources/scripts/jquery-3.2.1.min.js"></script>
 <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
 <script src="resources/scripts/axutils.js"></script>
