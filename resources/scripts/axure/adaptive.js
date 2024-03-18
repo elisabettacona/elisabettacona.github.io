@@ -330,7 +330,8 @@
             if (img) return img;
         }
         // check for the default state style
-        const defaultStateImage = findImage(images, scriptId, state);
+        // try to find an image for the default state or for the highest priority state if no default was found. RP-1854
+        const defaultStateImage = findImage(images, scriptId, state) || findImage(images, scriptId, overrideState);
         if (defaultStateImage) return defaultStateImage;
         
         if(doNotDecomposeState) return undefined;
@@ -429,7 +430,7 @@
         if (message == 'switchAdaptiveView') {
             if (!$axure.utils.isInPlayer()) return;
 
-            var href = window.location.href.split('#')[0];
+            var href = decodeURI(window.location.href.split('?')[0]);
             var lastSlash = href.lastIndexOf('/');
             href = href.substring(lastSlash + 1);
             if(href != data.src) return;
@@ -466,9 +467,9 @@
                 
                 $('html').css('overflow-x', 'hidden');
 
-                var bodyWidth = $body.width();
-                var isCentered = $body.css('position') == 'relative';
-                
+                var view = $ax.adaptive.currentViewId ? _idToView[$ax.adaptive.currentViewId] : $ax.pageData.defaultAdaptiveView;
+                var bodyWidth = view.size.width;
+
                 // screen width does not adjust on screen rotation for iOS (width is always shorter screen measurement)
                 var isLandscape = window.orientation != 0 && window.orientation != 180;
                 var mobileWidth = (IOS ? (isLandscape ? window.screen.height : window.screen.width) : window.screen.width) - data.panelWidthOffset;
@@ -480,6 +481,7 @@
                     if (hScaleN < scaleN) {
                         scaleN = newScaleN = hScaleN;
                     }
+                    var isCentered = $body.css('position') == 'relative';
                     if (isCentered) contentOriginOffset = scaleN * (bodyWidth / 2);
                 }
 
@@ -588,6 +590,7 @@
         var emulateTouch = nS.length > 0 && nS[0].opt.emulateTouch;
         nS.remove();
         //clean up nicescroll css
+        $container.css({ 'overflow': '' });
         if (IE) $container.css({ '-ms-overflow-y': '', 'overflow-y': '', '-ms-overflow-style': '', '-ms-touch-action': '' });
         if (!emulateTouch) return; 
         if (_isHtmlQuery($container)) {

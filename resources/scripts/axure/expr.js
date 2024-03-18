@@ -670,7 +670,7 @@ $axure.internal(function($ax) {
         if (eventInfo && eventInfo.srcElement) {
             var id = eventInfo.srcElement;
             var diagramObject = $ax.getObjectFromElementId(id);
-            if (diagramObject.owner.type == 'Axure:Master') {
+            if (diagramObject.owner.type == 'Axure:Master' || diagramObject.owner.type == 'referenceDiagramObject') {
                 var viewIdChain = $ax.style.getViewIdChain($ax.adaptive.currentViewId || '', id, diagramObject);
                 if (viewIdChain.length > 0) return viewIdChain[viewIdChain.length - 1];
                 else return '19e82109f102476f933582835c373474';

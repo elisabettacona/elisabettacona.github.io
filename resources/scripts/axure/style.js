@@ -201,9 +201,11 @@
         }
         var obj = $obj(id);
         if(obj) {
+            // Lets remove 'selected' css class independently of object type (dynamic panel, layer or simple rectangle). See RP-1559
+            if (!value) $jobj(id).removeClass(SELECTED);
+
             var actionId = id;
             if ($ax.public.fn.IsDynamicPanel(obj.type) || $ax.public.fn.IsLayer(obj.type)) {
-                if(!value) $jobj(id).removeClass(SELECTED);
                 var children = $axure('#' + id).getChildren()[0].children;
                 var skipIds = new Set();
                 for(var i = 0; i < children.length; i++) {
@@ -816,8 +818,41 @@
         const imageUrl = $ax.adaptive.getImageForStateAndView(id, event);
         if(imageUrl) _applyImage(id, imageUrl, event);
 
-        const style = _computeAllOverrides(id, undefined, event, $ax.adaptive.currentViewId);
-        if(!$.isEmptyObject(style) && textId) _applyTextStyle(textId, style);
+        if (textId) {
+            const overridedStyle = _computeAllOverrides(id, undefined, event, $ax.adaptive.currentViewId);
+            var borderElement = document.getElementById(id + '_div');
+            var textElement = document.getElementById(textId);
+            if (!$.isEmptyObject(overridedStyle)) {
+                var diagramObject = $ax.getObjectFromElementId(id);
+                var fullStyle = _computeFullStyle(id, event, $ax.adaptive.currentViewId, overridedStyle);
+                var padding = { top: 0, right: 0, bottom: 0, left: 0 };
+                if (fullStyle.paddingTop) padding.top = +fullStyle.paddingTop;
+                if (fullStyle.paddingBottom) padding.bottom = +fullStyle.paddingBottom;
+                if (fullStyle.paddingLeft) padding.left = +fullStyle.paddingLeft;
+                if (fullStyle.paddingRight) padding.right = +fullStyle.paddingRight;
+                var newSize = _applyTextStyle(textId, overridedStyle, padding);
+                if (borderElement && textElement && (diagramObject.autoFitHeight || diagramObject.autoFitWidth)) {
+                    if (diagramObject.autoFitHeight) {
+                        var height = newSize.height;
+                        borderElement.style.height = height + 'px';
+                        textElement.style.top = 0;
+                    }
+                    if (diagramObject.autoFitWidth) {
+                        var width = newSize.width;
+                        borderElement.style.width = width + 'px';
+                        textElement.style.left = 0;
+                    }
+                }
+            } else if (borderElement && textElement) {
+                var parentElement = document.getElementById(id);
+                if (parentElement) {
+                    borderElement.style.height = parentElement.style.height;
+                    borderElement.style.width = parentElement.style.width;
+                }
+                textElement.style.top = '';
+                textElement.style.left = '';
+            }
+        }
 
         _updateStateClasses(
             [
@@ -891,15 +926,17 @@
 
     var _getViewIdChain = $ax.style.getViewIdChain = function(currentViewId, id, diagramObject) {
         var viewIdChain;
-        if (diagramObject.owner.type != 'Axure:Master') {
-            viewIdChain = $ax.adaptive.getAdaptiveIdChain(currentViewId);
-        } else {
+        if (diagramObject.owner.type == 'Axure:Master' || diagramObject.owner.type == 'referenceDiagramObject') {
             //set viewIdChain to the chain from the parent RDO
-            var parentRdoId = $ax('#' + id).getParents(true, ['rdo'])[0][0];
+            var parentRdoId;
+            if (diagramObject.owner.type == 'referenceDiagramObject') parentRdoId = diagramObject.owner.scriptIds[0];
+            if (!parentRdoId) parentRdoId = $ax('#' + id).getParents(true, ['rdo'])[0][0];
             var rdoState = $ax.style.generateState(parentRdoId);
             var rdoStyle = $ax.style.computeFullStyle(parentRdoId, rdoState, currentViewId);
             var viewOverride = rdoStyle.viewOverride;
-            viewIdChain = $ax.adaptive.getMasterAdaptiveIdChain(diagramObject.owner.packageId, viewOverride);
+            viewIdChain = $ax.adaptive.getMasterAdaptiveIdChain(diagramObject.owner.type == 'referenceDiagramObject' ? diagramObject.owner.masterId : diagramObject.owner.packageId, viewOverride);
+        } else {
+            viewIdChain = $ax.adaptive.getAdaptiveIdChain(currentViewId);
         }
         return viewIdChain;
     }
@@ -979,14 +1016,25 @@
     };
 
     // returns the full effective style for an object in a state state and view
-    var _computeFullStyle = $ax.style.computeFullStyle = function(id, state, currentViewId) {
+    var _computeFullStyle = $ax.style.computeFullStyle = function(id, state, currentViewId, overrides) {
         var obj = $obj(id);
-        var overrides = _computeAllOverrides(id, undefined, state, currentViewId);
+        if (!overrides) overrides = _computeAllOverrides(id, undefined, state, currentViewId);
+        // get style for current state
+        var dynamicPanelStyle = _getCurrentPanelDiagramStyle(id);
+
         // todo: account for image box
         var objStyle = obj.style;
         var customStyle = objStyle.baseStyle && $ax.document.stylesheet.stylesById[objStyle.baseStyle];
-        var returnVal = $.extend({}, $ax.document.stylesheet.defaultStyle, customStyle, objStyle, overrides);
+        var returnVal = $.extend({}, $ax.document.stylesheet.defaultStyle, customStyle, objStyle, dynamicPanelStyle, overrides);
         return _removeUnsupportedProperties(returnVal, obj);
+    };
+
+    var _getCurrentPanelDiagramStyle = function (id) {
+        var diagramObj = $ax.visibility.GetCurrentPanelDiagram(id);
+        if (diagramObj) {
+            return diagramObj.style;
+        }
+        return {};
     };
 
     var _removeUnsupportedProperties = function(style, object) {
@@ -1179,7 +1227,7 @@
         var rtfElement = window.document.getElementById(textId);
         if(!rtfElement) return;
 
-        transformFn();
+        return transformFn();
 
         //_storeIdToAlignProps(textId);
 
@@ -1496,12 +1544,20 @@
     //                         { 'fontWeight' : 'bold',
     //                           'fontStyle' : 'italic' }
     //-------------------------------------------------------------------------
-    var _applyTextStyle = function(id, style) {
-        _transformTextWithVerticalAlignment(id, function() {
+    var _applyTextStyle = function (id, style, padding = {top:0, right: 0, bottom: 0, left: 0}) {
+        return _transformTextWithVerticalAlignment(id, function() {
             var styleProperties = _getCssStyleProperties(style);
-            $('#' + id).find('*').each(function(index, element) {
+            var container = $('#' + id);
+            var newSize = { width: container[0].offsetWidth, height: container[0].offsetHeight };
+            var hasLineHeight = !!container.css('line-height');
+            container.find('*').each(function(index, element) {
                 _applyCssProps(element, styleProperties);
+                var width = element.offsetWidth + padding.left + padding.right;
+                var height = element.offsetHeight + padding.top + padding.bottom;
+                if(width > newSize.width) newSize.width = width;
+                if(!hasLineHeight && height > newSize.height) newSize.height = height;
             });
+            return newSize;
         });
     };
 

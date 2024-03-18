@@ -169,40 +169,14 @@
         });
 
         window.lastFocusedClickable = null;
-        var _lastFocusedClickableSelector = 'input, a';
-        var shouldOutline = true;
-
-        $ax(function (dObj) { return dObj.tabbable; }).each(function (dObj, elementId) {
-            if ($ax.public.fn.IsLayer(dObj.type)) $ax.event.layerMapFocus(dObj, elementId);
-            var focusableId = $ax.event.getFocusableWidgetOrChildId(elementId);
-            var $focusable = $('#' + focusableId);
-            $focusable.attr("tabIndex", 0);
-            if($focusable.is('div') || $focusable.is('img')) {
-                $focusable.bind($ax.features.eventNames.mouseDownName, function() {
-                    shouldOutline = false;
-                });
-                attachFocusAndBlur($focusable);
-            }
-        });
+        window.shouldOutline = true;
 
         $(window.document).bind($ax.features.eventNames.mouseUpName, function() {
-            shouldOutline = true;
+            window.shouldOutline = true;
         });
 
-        attachFocusAndBlur($(_lastFocusedClickableSelector));
-
-        function attachFocusAndBlur($query) {
-            $query.focus(function () {
-                if(shouldOutline) {
-                    $(this).css('outline', '');
-                } else {
-                    $(this).css('outline', 'none');
-                }
-                window.lastFocusedClickable = this;
-            }).blur(function () {
-                if(window.lastFocusedClickable == this) window.lastFocusedClickable = null;
-            });
-        }
+        var _lastFocusedClickableSelector = 'input, a';
+        $ax.event.attachFocusAndBlur($(_lastFocusedClickableSelector));
 
         $(window.document).bind('keyup', function (e) {
             switch(e.which) {

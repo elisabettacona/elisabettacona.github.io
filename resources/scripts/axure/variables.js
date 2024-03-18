@@ -82,7 +82,7 @@ $axure.internal(function($ax) {
     _globalVariableProvider.getVariableValue = getVariableValue;
 
     var load = function() {
-        let query = (window.location.href.split("#")[1] || ''); //hash.substring(1); Firefox decodes this so & in variables breaks
+        let query = (window.location.href.split("?")[1] || ''); //hash.substring(1); Firefox decodes this so & in variables breaks
         if(query.length > 0) {
             $ax.utils.parseGlobalVars(query, setVariableValue);
         }
@@ -90,17 +90,33 @@ $axure.internal(function($ax) {
 
     var getLinkUrl = function(baseUrl, useGlobalVarName) {
         var toAdd = '';
+        var hasQueryParam = baseUrl.indexOf('?') >= 0;
         var definedVariables = _getDefinedVariables();
         for(var i = 0; i < definedVariables.length; i++) {
             var key = definedVariables[i];
             var val = getVariableValue(key, undefined, true);
-            if(val != null) {
-                if(toAdd.length > 0) toAdd += '&';
-                else if(useGlobalVarName) toAdd = GLOBAL_VAR_NAME;
-                toAdd += key + '=' + encodeURIComponent(val);
+            if (val != null) {
+                if (toAdd.length === 0) {
+                    if (useGlobalVarName) {
+                        if (hasQueryParam) toAdd += '&';
+                        toAdd += GLOBAL_VAR_NAME;
+                    }
+                    toAdd += key + '=' + encodeURIComponent(val);
+                } else {
+                    toAdd += '&' + key + '=' + encodeURIComponent(val);
+                }
             }
         }
-        return toAdd.length > 0 ? baseUrl + (useGlobalVarName ? '' : '#') + toAdd + "&" + GLOBAL_VAR_CHECKSUM + "=1" : baseUrl;
+
+        if (window.location.protocol !== 'file:' && window.parent && window.parent.CLOUD_VAR_NAME) {
+            var cl = $ax.utils.getQueryString(window.parent.CLOUD_VAR_NAME, window.parent.location.href);
+            if (cl && cl.length > 0) {
+                if (toAdd.length > 0 || hasQueryParam) toAdd += '&';
+                toAdd += window.parent.CLOUD_VAR_NAME + '=' + cl;
+            }
+        }
+
+        return toAdd.length > 0 ? baseUrl + (hasQueryParam ? '' : '?') + toAdd + "&" + GLOBAL_VAR_CHECKSUM + "=1" : baseUrl;
     };
     _globalVariableProvider.getLinkUrl = getLinkUrl;
 

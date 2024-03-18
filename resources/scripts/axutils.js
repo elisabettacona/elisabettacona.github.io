@@ -10,7 +10,7 @@ const PAGE_URL_NAME = 'p';
 const SITEMAP_COLLAPSE_VAR_NAME = 'c';
 const SITEMAP_COLLAPSE_VALUE = "1";
 const SITEMAP_CLOSE_VALUE = "2";
-const GLOBAL_VAR_NAME = '&ZQZ=s&';
+const GLOBAL_VAR_NAME = 'ZQZ=s&';
 const GLOBAL_VAR_CHECKSUM = 'CSUM';
 
  (function() {
@@ -129,32 +129,32 @@ const GLOBAL_VAR_CHECKSUM = 'CSUM';
      // (won't be able to distinguish between browser and outdated app)
      $axure.utils.isShareApp = function () { return /ShareApp/.test(navigator.userAgent); }
 
-     $axure.utils.setHashStringVar = function(currentHash, varName, varVal) {
+     $axure.utils.setHashStringVar = function (currentQuery, varName, varVal) {
          var varWithEqual = varName + '=';
-         var poundVarWithEqual = varVal === '' ? '' : '#' + varName + '=' + varVal;
+         var poundVarWithEqual = varVal === '' ? '' : '?' + varName + '=' + varVal;
          var ampVarWithEqual = varVal === '' ? '' : '&' + varName + '=' + varVal;
-         var hashToSet = '';
+         var queryToSet = '';
 
-         var pageIndex = currentHash.indexOf('#' + varWithEqual);
-         if (pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
+         var pageIndex = currentQuery.indexOf('?' + varWithEqual);
+         if (pageIndex == -1) pageIndex = currentQuery.indexOf('&' + varWithEqual);
          if (pageIndex != -1) {
-             var newHash = currentHash.substring(0, pageIndex);
+             var newQuery = currentQuery.substring(0, pageIndex);
 
-             newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
+             newQuery = newQuery == '' ? poundVarWithEqual : newQuery + ampVarWithEqual;
 
-             var ampIndex = currentHash.indexOf('&', pageIndex + 1);
+             var ampIndex = currentQuery.indexOf('&', pageIndex + 1);
              if (ampIndex != -1) {
-                 newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
+                 newQuery = newQuery == '' ? '?' + currentQuery.substring(ampIndex + 1) : newQuery + currentQuery.substring(ampIndex);
              }
-             hashToSet = newHash;
-         } else if (currentHash.indexOf('#') != -1) {
-             hashToSet = currentHash + ampVarWithEqual;
+             queryToSet = newQuery;
+         } else if (currentQuery.indexOf('?') != -1) {
+             queryToSet = currentQuery + ampVarWithEqual;
          } else {
-             hashToSet = poundVarWithEqual;
+             queryToSet = poundVarWithEqual;
          }
 
-         if (hashToSet != '' || varVal == '') {
-             return hashToSet;
+         if (queryToSet != '' || varVal == '') {
+             return queryToSet;
          }
 
          return null;
@@ -169,7 +169,7 @@ const GLOBAL_VAR_CHECKSUM = 'CSUM';
              let varValue = pair[1];
              if(varName) {
                  if(varName == GLOBAL_VAR_CHECKSUM) csum = true;
-                 else setAction(varName, decodeURIComponent(varValue), true);
+                 else setAction(varName, decodeURIComponent(decodeURIComponent(varValue)), true);
              }
          }
 
@@ -231,6 +231,34 @@ const GLOBAL_VAR_CHECKSUM = 'CSUM';
          return $axure.utils.Matrix2D(1, 0, 0, 1, 0, 0);
      };
 
+     var getParameter = function (qstring, query) {
+         var prms = qstring[1].split("&");
+         var frmelements = new Array();
+         var currprmeter, querystr = "";
+
+         for (var i = 0; i < prms.length; i++) {
+             currprmeter = prms[i].split("=");
+             frmelements[i] = new Array();
+             frmelements[i][0] = currprmeter[0];
+             frmelements[i][1] = currprmeter[1];
+         }
+
+         for (j = 0; j < frmelements.length; j++) {
+             if (frmelements[j][0].toLowerCase() == query.toLowerCase()) {
+                 querystr = frmelements[j][1];
+                 break;
+             }
+         }
+         return querystr;
+     }
+
+     $axure.utils.getQueryString = function (query, url) {
+         if (!url) url = window.location.href;
+
+         var qstring = url.split("?");
+         if (qstring.length < 2) return "";
+         return getParameter(qstring, query);
+     };
  })();
 
  // TODO: [mas] simplify this

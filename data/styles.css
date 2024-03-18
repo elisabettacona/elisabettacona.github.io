@@ -1,5 +1,5 @@
 ﻿.ax_default {
-  font-family:'ArialMT', 'Arial', sans-serif;
+  font-family:"ArialMT", "Arial", sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -51,20 +51,20 @@
   text-align:left;
 }
 .heading_4 {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:14px;
   text-align:left;
 }
 .heading_5 {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:bold;
   font-style:normal;
   text-align:left;
 }
 .heading_6 {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:bold;
   font-style:normal;
   font-size:10px;
@@ -75,7 +75,7 @@
   text-align:left;
 }
 .paragraph {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:400;
   font-style:normal;
   text-align:left;
@@ -88,13 +88,13 @@
 .text_link_mouse_down {
 }
 .form_hint {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:400;
   font-style:normal;
   color:#999999;
 }
 .form_disabled {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:400;
   font-style:normal;
 }
@@ -105,7 +105,7 @@
 .arrow {
 }
 .text_field {
-  font-family:'Roboto-Regular', 'Roboto', sans-serif;
+  font-family:"Roboto-Regular", "Roboto", sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:16px;

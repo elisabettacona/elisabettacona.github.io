@@ -78,6 +78,10 @@ textarea {
     -moz-box-sizing: border-box;
 }
 
+select option {
+    color: initial;
+}
+
 .focused:focus, .selectedFocused:focus {
     outline: none;
 }
@@ -93,7 +97,8 @@ div.intcases {
     position:absolute;
     padding: 0px;
     border-radius: 3px;
-    white-space: nowrap;
+    white-space: pre-wrap;
+    max-width: 250px;
 }
 
 div.intcaselink {
@@ -251,8 +256,8 @@ div.annnote {
 .legacyPulsateBorder {
     /*border: 5px solid #15d6ba;
     margin: -5px;*/
-    -moz-box-shadow: 0 0 10px 3px #15d6ba;
-    box-shadow: 0 0 10px 3px #15d6ba;
+    -moz-box-shadow: 0 0 10px 3px #75BB43;
+    box-shadow: 0 0 10px 3px #75BB43;
 }
 
 .pulsateBorder {
@@ -281,8 +286,8 @@ div.annnote {
 }
 
 .widgetNoteSelected {
-    -moz-box-shadow: 0 0 10px 3px #138CDD;
-    box-shadow: 0 0 10px 3px #138CDD;
+    -moz-box-shadow: 0 0 10px 3px #1482C5;
+    box-shadow: 0 0 10px 3px #1482C5;
     /*-moz-box-shadow: 0 0 20px #3915d6;
     box-shadow: 0 0 20px #3915d6;*/
     /*border: 3px solid #3915d6;*/

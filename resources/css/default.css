@@ -1,7 +1,7 @@
 ﻿body {
     font-family: 'Source Sans Pro', 'Trebuchet MS', Arial;
     font-size: 14px;
-    color: #2c2c2c;
+    color: #37465e;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -webkit-font-feature-settings: "kern";
@@ -59,15 +59,15 @@ input[type=text]::-ms-clear {
 }
 
 .splitbar:hover, .splitbar.active {
-    background: #cccccc;
+    background: #CBD5E0;
 }
 
 #lsplitbar {
-    border-right: 1px solid #cccccc;
+    border-right: 1px solid #CBD5E0;
 }
 
 #rsplitbar {
-    border-left: 1px solid #cccccc;
+    border-left: 1px solid #CBD5E0;
 }
 
 #mainPanel {
@@ -158,14 +158,14 @@ input[type=text]::-ms-clear {
 #topPanel {
     z-index: 1;
     height: 36px;
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #cccccc;
+    background-color: #FCFDFF;
+    border-bottom: 1px solid #CBD5E0;
     user-select: none;
 }
 
 .leftPanel, .rightPanel, .mobileOnlyPanel {
     position: relative;
-    background-color: #f2f2f2;
+    background-color: #FCFDFF;
     overflow: hidden;
     width: 0px;
     flex-shrink: 0;
@@ -176,7 +176,7 @@ input[type=text]::-ms-clear {
     position: absolute;
     z-index: 20000;
     display: none;
-    background-color: #f2f2f2;
+    background-color: #FCFDFF;
     border: solid 1px #bdbcbc;
     position: absolute;
     box-shadow: 0 1px 2px 0 rgba(87, 87, 87, 0.5);
@@ -212,7 +212,7 @@ input[type=text]::-ms-clear {
 }
 
 #maximizePanel {
-    background-color: #f2f2f2;
+    background-color: #FCFDFF;
     cursor: pointer;
 }
 
@@ -230,7 +230,7 @@ input[type=text]::-ms-clear {
     z-index: 100;
     height: 36px;
     width: 28px;
-    border-right: solid 1px #cbcbcb;
+    border-right: solid 1px #CBD5E0;
 }
 #interfaceControlFrameMinimizeContainer a {
     display: inline-block;
@@ -265,12 +265,93 @@ input[type=text]::-ms-clear {
 #inspectControlFrameHeader li {
     float: left;
     display: block;
+    position: relative;
     width: 42px;
     height: 36px;
     padding: 4px 5px 4px 5px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+
+.ax-button {
+    font-family: 'Source Sans Pro', 'Trebuchet MS', Arial;
+    font-weight: 600;
+    font-size: 12px;
+    color: #F7FAFC;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #3EACEF;
+    user-select: none;
+    border: none;
+    padding: 3px 16px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.ax-button:hover {
+    background-color: #1482c5;
+}
+
+.pluginHint {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    top: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: normal;
+    text-align: left;
+    width: 180px;
+    background: #ffffff;
+    border: 1px solid #d7d7d7;
+    color: #718096;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 1px 3px rgba(26, 32, 44, 0.2);
+}
+
+.pluginHint button {
+    margin-top: 10px;
+}
+
+.pluginHint.left {
+    left: 50%;
+    right: auto;
+    transform: translateX(-20px);
+}
+.pluginHint.right {
+    left: auto;
+    right: 50%;
+    transform: translateX(20px);
+}
+
+.pluginHint::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #d7d7d7;
+    border-left: 1px solid #d7d7d7;
+    background-color: #fff;
+    position: absolute;
+    top: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    left: 50%;
+}
+
+.pluginHint.left::after {
+    left: 20px;
+    right: auto;
+    transform: translateX(-50%) rotate(45deg);
+}
+.pluginHint.right::after {
+    left: auto;
+    right: 20px;
+    transform: translateX(50%) rotate(45deg);
 }
 
 #inspectControlFrameHeader li a {
@@ -289,7 +370,7 @@ input[type=text]::-ms-clear {
 
 .hashover #inspectControlFrameHeader li a:hover {
     border-radius: 3px;
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
 }
 
 /*#inspectControlFrameHeader li a.selected, #inspectControlFrameHeader li a.selected:hover {
@@ -322,10 +403,9 @@ input[type=text]::-ms-clear {
 }
 
 #projectControlFrameHeader li {
+    position: relative;
     float: left;
     display: block;
-    width: 28px;
-    height: 28px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -336,7 +416,7 @@ input[type=text]::-ms-clear {
     height: 100%;
     width: 32px;
     outline: none;
-    margin: auto;
+    margin-bottom: 3px;
     text-decoration: none;
     color: #ffffff;
     white-space: nowrap;
@@ -347,7 +427,7 @@ input[type=text]::-ms-clear {
 
 .hashover #projectControlFrameHeader li a:hover {
     border-radius: 3px;
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
 }
 
 /*#projectControlFrameHeader li a.selected, #projectControlFrameHeader li a.selected:hover {
@@ -380,7 +460,7 @@ input[type=text]::-ms-clear {
 
 .overflowOptionCheckbox, #projectOptionsHotspotsCheckbox {
     position: relative;
-    border: solid 1px #8c8c8c;
+    border: solid 1px #718096;
     display: inline-block;
 }
     .overflowOptionCheckbox {
@@ -399,8 +479,8 @@ input[type=text]::-ms-clear {
 
 .overflowOptionCheckbox.selected, #projectOptionsHotspotsCheckbox.selected {
     background: url('../images/overflow_checkmark.svg') no-repeat center center, linear-gradient(transparent,transparent);
-    background-color: #20bba6;
-    border: solid 1px #20bba6;
+    background-color: #75BB43;
+    border: solid 1px #75BB43;
     background-size: contain;
 }
 
@@ -425,23 +505,22 @@ input[type=text]::-ms-clear {
     right: 200px;
     width: 140px;
     border-radius: 2px;
-    padding-top: 9px;
 }
 
 .vpZoomValue {
-    padding: 3px 9px 3px 16px;
+    padding: 5px 9px 5px 16px;
     cursor: pointer;
     user-select: none;
 }
 
 .vpZoomValue:hover {
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
 }
 
 .showOption {
     font-size: 14px;
 	padding: 9px 0px 0px 15px;
-    color: #3B3B3B;
+    /*color: #3B3B3B;*/
 }
 
 .showOption:hover {
@@ -552,7 +631,7 @@ input[type=text]::-ms-clear {
     display: block;
     width: 1px;
     height: 100%;
-    background-color: #c4c4c4;
+    background-color: #CBD5E0;
 }
 
 #interfacePageNameContainer {
@@ -560,14 +639,14 @@ input[type=text]::-ms-clear {
     cursor: pointer;
 }
 
-#sitemapControlFrameContainer{
+#sitemapControlFrameContainer {
     display: flex;
     margin: 4px 6px;
 }
 
 .hashover #sitemapControlFrameContainer:hover {
     border-radius: 3px;
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
 }
 
 /*.hashover #sitemapControlFrameContainer.selected:hover {
@@ -578,7 +657,7 @@ input[type=text]::-ms-clear {
     position: absolute;
     display: none;
     width: 220px;
-    background-color: #f2f2f2;
+    background-color: #FCFDFF;
     right: 240px;
 }
 
@@ -588,8 +667,8 @@ input[type=text]::-ms-clear {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 175px;
-    margin-left: 10px;
     margin-right: 6px;
+    font-weight: 600;
 }
 
 .pageCountHeader {
@@ -597,7 +676,6 @@ input[type=text]::-ms-clear {
     white-space: nowrap;
     margin-left: 5px;
     margin-right: 6px;
-    color: #aaaaaa;
 }
 
 #interfaceAdaptiveViewsContainer {
@@ -608,7 +686,7 @@ input[type=text]::-ms-clear {
 }
 #interfaceAdaptiveViewsContainer:hover {
     border-radius: 3px;
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
 }
 
 .adaptiveViewHeader {
@@ -673,7 +751,7 @@ input[type=text]::-ms-clear {
     display: flex;
     font-size: 14px;
     line-height: 29px;
-    color: #3b3b3b;
+    color: #37465e;
 }
 
 #interfaceControlFrameRight {
@@ -717,13 +795,13 @@ input[type=text]::-ms-clear {
 
 #scaleMenuButton:hover {
     border-radius: 3px;
-    background-color: #e6e6e6;
+    background-color: #EDEFF1;
     cursor: pointer;
 }
 
 #scaleValue {
     font-weight: bold;
-    color: #6d6d6d;
+    /*color: #6d6d6d;*/
 }
 
 #expandScaleArrow {    
@@ -738,8 +816,9 @@ input[type=text]::-ms-clear {
 
 .emptyStateContainer {
     text-align: center;
-    padding: 0px 10px;
-    margin-top: 32px
+    /*padding: 0px 10px;*/
+    margin-top: 32px;
+    padding: 0px 15px;
 }
 
 .emptyStateTitle {
@@ -748,14 +827,17 @@ input[type=text]::-ms-clear {
 }
 
 .emptyStateContent {
+    padding: 0px 10px;
     line-height: 22px;
 }
 
 .dottedDivider {
     height: 2px;
-    margin: 15px 0px 15px 0px;
-    background: url('../images/divider.png') no-repeat center center;
-    background: url('../images/divider.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    margin: 15px 10px 15px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    /*background: url('../images/divider.png') no-repeat center center;*/
+    /*background: url('../images/divider.svg') no-repeat center center, linear-gradient(transparent,transparent);*/
+
 }
 
 .mobileMode .dottedDivider {
@@ -769,20 +851,22 @@ input[type=text]::-ms-clear {
 
 .lineDivider {
     height: 2px;
-    margin: 10px 12px 20px 12px;
-    border-bottom: solid 1px #e7e7e7;
+    margin: 10px 15px 20px 15px;
+    border-bottom: solid 1px #E2E8F0;
+    /*opacity: .5;*/
 }
 
 .pluginNameHeader {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    color: #6d6d6d;
+    flex: 1;
+    margin-left: 4px;
 }
 
 .mobileMode .pluginNameHeader {
     margin: 14px 12px 13px 12px;
     font-size: 18px;
-    color: #6d6d6d;
+    /*color: #6d6d6d;*/
 }
 
 #projectOptionsHost {
@@ -870,7 +954,7 @@ div.mobileText, span.mobileText {
 #closeBackground {
     width: 61px;
     height: 61px;
-    background-color: #f2f2f2;
+    background-color: #FCFDFF;
 }
 
 .closeIconSlash {
@@ -924,7 +1008,7 @@ div.mobileText, span.mobileText {
 .closeButtonContainer button {
     font-size: 12px;
     padding: 5px 10px;
-    color: #6D6D6D;
+    color: #718096;
     cursor: pointer;
     background-color: inherit;
     border: none;
